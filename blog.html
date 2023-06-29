@@ -5,9 +5,15 @@
     <meta charset="UTF-8" />
     <script>
       window.onload = function () {
-        var path = window.location.pathname; // Get the path from the current URL
-        var redirectURL = "https://paper.wf/spignelon" + path; // Construct the redirect URL
-        window.location.href = redirectURL; // Redirect to the appropriate URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var path = urlParams.get("q");
+
+        if (path) {
+          var redirectURL = "https://paper.wf/spignelon/" + path;
+          window.location.href = redirectURL;
+        } else {
+          window.location.href = "https://paper.wf/spignelon/";
+        }
       };
     </script>
   </head>
