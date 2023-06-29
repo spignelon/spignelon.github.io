@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Redirection Page</title>
-     <meta charset="UTF-8" />
-     <meta http-equiv="refresh" content="0; URL=https://paper.wf/spignelon/" />
-   </head>
-   <body>
-     <p>Redirecting to <a href="https://paper.wf/spignelon/">the blog</a></p>
-   </body>
+  <head>
+    <title>Redirection Page</title>
+    <meta charset="UTF-8" />
+    <script>
+      window.onload = function () {
+        var path = window.location.pathname; // Get the path from the current URL
+        var redirectURL = "https://paper.wf/spignelon" + path; // Construct the redirect URL
+        window.location.href = redirectURL; // Redirect to the appropriate URL
+      };
+    </script>
+  </head>
+  <body>
+    <p>If you are not redirected automatically, <a href="https://paper.wf/spignelon">click here</a>.</p>
+  </body>
 </html>
