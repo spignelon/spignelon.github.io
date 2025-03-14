@@ -1,8 +1,0 @@
----
-const res = await fetch("https://paper.wf/spignelon/sitemap.xml");
-if (!res.ok) return res;
-const xml = await res.text();
-return new Response(
-  xml.replaceAll("https://paper.wf/spignelon", "https://ujjawalsaini.me/blog")
-);
----

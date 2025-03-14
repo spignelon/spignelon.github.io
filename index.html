@@ -1,0 +1,1643 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <meta name="description" content="Portfolio of Ujjawal Saini, a versatile developer proficient in Full Stack Web Development, Machine Learning, Deep Learning, and Cyber Security. Multiple hackathon winner and open source contributor.">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="">
+
+      <title>Ujjawal Saini | Full Stack Developer, AI/ML Engineer & Cybersecurity Enthusiast</title>
+      <!-- SEO Description -->
+      <meta name="description" content="Portfolio of Ujjawal Saini, a versatile developer proficient in Full Stack Web Development, Machine Learning, Deep Learning, and Cyber Security. Multiple hackathon winner and open source contributor.">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      
+      <!-- Header Scripts -->
+      <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+          document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+      </script>
+
+      <!-- Preconnect -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+      <!-- Font stylesheet -->
+
+      <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+      // render the settings object
+      //console.log('settings', [object Object]);
+      document.addEventListener('DOMContentLoaded', function() {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  DEFAULT: '#0A192F',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8', 
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  DEFAULT: '#112240',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3', 
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  DEFAULT: '',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3', 
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Poppins, sans-serif', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Roboto Mono, monospace', 'Inter', 'system-ui', 'sans-serif'],
+                body: ['Roboto Mono, monospace', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      });
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="robots" content="">
+      <meta name="google-site-verification" content="">
+      <meta name="baidu-verification" content="">
+      <meta name="yandex-verification" content="">
+      <meta name="bing-verification" content="">
+      <meta property="og:title" content="">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="Ujjawal Saini Portfolio">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="">
+      <meta name="twitter:description" content="">
+      <meta name="twitter:image" content="">
+    
+      
+      <!-- Font Links -->
+     
+      <link rel="icon" type="image/x-icon" href="">
+
+      <style>
+        h1, h2, h3, h4, h5, h6 {
+          font-family: Poppins, sans-serif, Inter, system-ui, sans-serif;
+        }
+        body {
+          font-family: Roboto Mono, monospace, Inter, system-ui, sans-serif;
+        }
+      </style>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full">
+        <div id="RolloutPageContent"><element id="0f70057f-fe70-4f0e-97d6-0cf854c071d9" data-section-id="0f70057f-fe70-4f0e-97d6-0cf854c071d9">
+
+
+<div id="root">
+  <section id="header">
+    <nav class="fixed w-full top-0 z-50 bg-[#0A192F] text-white py-4 px-6 shadow-lg">
+      <div class="flex justify-between items-center">
+        <a href="#hero" class="text-[#64FFDA] font-semibold text-xl font-mono">Ujjawal Saini</a>
+        
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6">
+            <li><a href="#hero" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300 text-sm">Home</a></li>
+            <li><a href="#about" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300 text-sm">About</a></li>
+            <li><a href="#experience" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300 text-sm">Experience</a></li>
+            <li><a href="#skills" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300 text-sm">Skills</a></li>
+            <li><a href="#projects" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300 text-sm">Projects</a></li>
+            <li><a href="#achievements" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300 text-sm">Achievements</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300 text-sm">Contact</a></li>
+          <li>
+            <a href="/resume.pdf" class="border border-[#64FFDA] text-[#64FFDA] px-4 py-2 rounded text-sm hover:bg-[#64FFDA]/10 transition-colors duration-300">Resume</a>
+          </li>
+        </ul>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none" aria-label="Toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-[#112240] absolute top-16 left-0 w-full py-2 shadow-lg">
+        <ul class="flex flex-col space-y-3 px-6 py-4">
+            <li><a href="#hero" class="block text-gray-300 hover:text-[#64FFDA] py-2 transition-colors duration-300">Home</a></li>
+            <li><a href="#about" class="block text-gray-300 hover:text-[#64FFDA] py-2 transition-colors duration-300">About</a></li>
+            <li><a href="#experience" class="block text-gray-300 hover:text-[#64FFDA] py-2 transition-colors duration-300">Experience</a></li>
+            <li><a href="#skills" class="block text-gray-300 hover:text-[#64FFDA] py-2 transition-colors duration-300">Skills</a></li>
+            <li><a href="#projects" class="block text-gray-300 hover:text-[#64FFDA] py-2 transition-colors duration-300">Projects</a></li>
+            <li><a href="#achievements" class="block text-gray-300 hover:text-[#64FFDA] py-2 transition-colors duration-300">Achievements</a></li>
+            <li><a href="#contact" class="block text-gray-300 hover:text-[#64FFDA] py-2 transition-colors duration-300">Contact</a></li>
+          <li class="pt-2">
+            <a href="/resume.pdf" class="inline-block border border-[#64FFDA] text-[#64FFDA] px-4 py-2 rounded hover:bg-[#64FFDA]/10 transition-colors duration-300">Resume</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Close mobile menu when clicking on links
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</div>
+
+</element><element id="aee68acc-040a-4263-9eef-7a96c53287ae" data-section-id="aee68acc-040a-4263-9eef-7a96c53287ae">
+
+
+<div id="root">
+  <section id="hero" class="bg-[#0A192F] text-white min-h-screen flex items-center pt-20">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="animate__animated animate__fadeInLeft">
+          <p class="text-[#64FFDA] font-mono mb-4">Hi, my name is</p>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-200 mb-2">Ujjawal Saini.</h1>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-400 mb-6">I build things for the web & AI.</h2>
+          <p class="text-gray-400 max-w-xl mb-8 text-lg">
+            A versatile developer and hacker proficient in <span class="text-[#64FFDA]">Backend Web Development</span>, 
+            <span class="text-[#64FFDA]">Machine Learning</span>, 
+            <span class="text-[#64FFDA]">Deep Learning</span> and 
+            <span class="text-[#64FFDA]">Cyber Security</span>.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-10">
+            <a href="#projects" class="bg-[#64FFDA] text-[#0A192F] px-6 py-3 rounded font-medium hover:bg-opacity-80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:ring-opacity-50">
+              See My Work
+            </a>
+            <a href="#contact" class="border border-[#64FFDA] text-[#64FFDA] px-6 py-3 rounded font-medium hover:bg-[#64FFDA]/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:ring-opacity-50">
+              Get In Touch
+            </a>
+          </div>
+          <div class="flex space-x-4">
+            <a href="https://github.com/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300" aria-label="GitHub">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300" aria-label="LinkedIn">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+            </a>
+            <a href="https://t.me/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300 flex items-center" aria-label="Telegram">
+                <i class="bi bi-telegram text-2xl leading-none" style="width: 1.5rem; height: 1.5rem;"></i>
+            </a>
+            <a href="https://ujjawalsaini.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300" aria-label="Blog">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.351 8.019l-6.37-6.37a5.63 5.63 0 0 0-7.962 0l-6.37 6.37a5.63 5.63 0 0 0 0 7.962l6.37 6.37a5.63 5.63 0 0 0 7.962 0l6.37-6.37a5.63 5.63 0 0 0 0-7.962zM12 15.953a3.953 3.953 0 1 1 0-7.906 3.953 3.953 0 0 1 0 7.906z"></path>
+              </svg>
+            </a>
+            <a href="mailto:ujjawalsaini47@gmail.com" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300 flex items-center" aria-label="Email">
+                <i class="bi bi-envelope-at-fill text-2xl leading-none" style="width: 1.5rem; height: 1.5rem;"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:block animate__animated animate__fadeInRight">
+            <div class="relative">
+              <div class="absolute inset-0 bg-[#64FFDA] rounded-md opacity-20 transform translate-x-5 translate-y-5"></div>
+              <div class="relative w-full h-full overflow-hidden rounded-md border-2 border-[#64FFDA] bg-[#0A192F] p-4">
+                <pre class="font-mono text-sm text-gray-300 overflow-auto">
+  <span class="text-blue-400">class</span> <span class="text-yellow-300">UjjawalSaini</span>:
+      <span class="text-blue-400">def</span> <span class="text-yellow-300">__init__</span>(<span class="text-purple-400">self</span>):
+          <span class="text-purple-400">self</span>.name = <span class="text-green-400">"Ujjawal Saini"</span>
+          <span class="text-purple-400">self</span>.role = <span class="text-green-400">"Developer & Hacker"</span>
+          <span class="text-purple-400">self</span>.education = <span class="text-green-400">"B.Tech AIML"</span>
+          <span class="text-purple-400">self</span>.interests = [
+              <span class="text-green-400">"Backend Development"</span>,
+              <span class="text-green-400">"Machine Learning"</span>,
+              <span class="text-green-400">"Cyber Security"</span>,
+              <span class="text-green-400">"DevOps"</span>
+          ]
+      
+      <span class="text-blue-400">def</span> <span class="text-yellow-300">get_skills</span>(<span class="text-purple-400">self</span>):
+          <span class="text-blue-400">return</span> {
+              <span class="text-green-400">"languages"</span>: [<span class="text-green-400">"Python"</span>, <span class="text-green-400">"Java"</span>, <span class="text-green-400">"Go"</span>, <span class="text-green-400">"C++"</span>],
+              <span class="text-green-400">"frameworks"</span>: [<span class="text-green-400">"Django"</span>, <span class="text-green-400">"Flask"</span>, <span class="text-green-400">"FastAPI"</span>],
+              <span class="text-green-400">"ml"</span>: [<span class="text-green-400">"PyTorch"</span>, <span class="text-green-400">"TensorFlow"</span>]
+          }
+      
+      <span class="text-blue-400">def</span> <span class="text-yellow-300">say_hello</span>(<span class="text-purple-400">self</span>):
+          <span class="text-blue-400">print</span>(<span class="text-green-400">"Thanks for visiting!"</span>)
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block animate__animated animate__fadeIn animate__delay-1s">
+          <a href="#about" class="text-[#64FFDA] flex flex-col items-center">
+            <span class="mb-2">Scroll Down</span>
+            <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</element><element id="9bd07679-3b14-4cab-ba0e-5d431ce514ad" data-section-id="9bd07679-3b14-4cab-ba0e-5d431ce514ad">
+
+
+<div id="root">
+  <section id="about" class="py-20 bg-[#112240]">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col items-start">
+        <h2 class="flex items-center text-3xl font-bold text-gray-200 mb-12">
+          <span class="text-[#64FFDA] font-mono mr-2">01.</span>
+          About Me
+          <div class="h-px bg-gray-600 ml-4 w-16 sm:w-32 md:w-48"></div>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
+          <div class="md:col-span-3 animate__animated animate__fadeIn">
+            <div class="space-y-4 text-gray-400">
+              <p>
+                Hello! I'm <span class="text-[#64FFDA]">Ujjawal Saini</span>, a final year B.Tech student specializing in Artificial Intelligence & Machine Learning at Guru Gobind Singh Indraprastha University.
+              </p>
+              <p>
+                I'm a versatile developer and hacker proficient in Full Stack Web Development, Machine Learning, Deep Learning, and Cyber Security. My passion lies in building robust backend systems, creating intelligent solutions with ML, and securing digital infrastructure.
+              </p>
+              <p>
+                My journey in tech has been marked by multiple hackathon victories, including the Amazon Sambhav Hackathon and Intel GenAI Hackathon at IIT Delhi, showcasing my ability to solve complex problems under pressure and deliver innovative solutions.
+              </p>
+              <p>
+                I've worked as a Backend Development Consultant at Repairo Tech, where I ported a Laravel PHP backend to Python Django and advised on strategic business decisions. I've also contributed to open source during the Social Summer of Code program, demonstrating my commitment to collaborative software development.
+              </p>
+              <p>
+                Here are some technologies I've been working with recently:
+              </p>
+              
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-6">
+                <div class="flex items-center">
+                  <div class="text-[#64FFDA] mr-2">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-mono">Python</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-[#64FFDA] mr-2">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-mono">Django</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-[#64FFDA] mr-2">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-mono">TensorFlow</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-[#64FFDA] mr-2">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-mono">PyTorch</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-[#64FFDA] mr-2">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-mono">Flask</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-[#64FFDA] mr-2">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-mono">MongoDB</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-[#64FFDA] mr-2">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-mono">PostgreSQL</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-[#64FFDA] mr-2">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-mono">Linux</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="text-[#64FFDA] mr-2">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm font-mono">Golang</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="md:col-span-2 flex justify-center md:justify-end animate__animated animate__fadeIn animate__delay-1s">
+            <div class="relative group w-64 h-64 sm:w-72 sm:h-72">
+              <div class="absolute inset-0 rounded-md bg-[#64FFDA] opacity-20 group-hover:opacity-30 transition-opacity duration-300 transform translate-x-4 translate-y-4"></div>
+              <div class="absolute inset-0 rounded-md border-2 border-[#64FFDA] opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="w-full h-full relative rounded-md overflow-hidden">
+                <div class="w-full h-full bg-[#64FFDA]/10 flex items-center justify-center text-[#64FFDA]">
+                  <span class="font-mono text-sm">Profile image</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-16 w-full">
+          <h3 class="text-2xl font-bold text-gray-200 mb-6">My Education</h3>
+          <div class="relative border-l-2 border-gray-700 pl-8 pb-6">
+            <div class="absolute w-4 h-4 bg-[#64FFDA] rounded-full -left-[9px] top-1"></div>
+            <h4 class="text-xl font-bold text-gray-300">Bachelor of Technology [AIML]</h4>
+            <p class="text-[#64FFDA] font-mono text-sm mt-1">Guru Gobind Singh Indraprastha University</p>
+            <p class="text-gray-400 mt-1">August 2021 - July 2025</p>
+            <p class="text-gray-400 mt-1">CGPA: 7.7</p>
+            <p class="text-gray-400 mt-4">Studying Artificial Intelligence & Machine Learning with a focus on practical applications and research. Participating in hackathons, competitions, and open-source contributions alongside academics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</element><element id="a96647d0-bcd6-449f-9c58-d0fde7842962" data-section-id="a96647d0-bcd6-449f-9c58-d0fde7842962">
+
+
+<div id="root">
+  <section id="experience" class="py-20 bg-neutral-900 text-white" style="background-color: rgb(10 25 47 / var(--tw-bg-opacity, 1))">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+          <span class="text-teal-400 font-mono">02.</span> Where I've Worked
+        </h2>
+        
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-teal-400/20 transform md:-translate-x-1/2"></div>
+          
+          <!-- Experience Items -->
+          <div class="space-y-16">
+            <!-- IBM -->
+            <div class="relative">
+              <div class="md:w-1/2 md:pr-12 md:text-right ml-6 md:ml-0">
+                <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-teal-400 border-4 border-neutral-900 transform -translate-x-1/2 mt-1.5"></div>
+                <span class="text-teal-400 font-mono">July 2024 - August 2024</span>
+                <h3 class="text-xl font-bold mt-1">Summer Intern</h3>
+                <p class="font-medium text-white">IBM</p>
+                <div class="mt-3 text-gray-300 space-y-2">
+                  <p class="flex md:justify-end items-start">
+                    <svg class="h-5 w-5 mr-2 md:order-last md:ml-2 md:mr-0 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Participated in a summer internship program collaborating with IBM SkillsBuild and CSRBOX, focusing on cutting-edge Artificial Intelligence and Machine Learning technologies.
+                  </p>
+                  <p class="flex md:justify-end items-start">
+                    <svg class="h-5 w-5 mr-2 md:order-last md:ml-2 md:mr-0 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Gained hands-on experience in developing AI/ML solutions, working with industry-standard tools and methodologies.
+                  </p>
+                  <p class="flex md:justify-end items-start">
+                    <svg class="h-5 w-5 mr-2 md:order-last md:ml-2 md:mr-0 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Worked on practical projects demonstrating application of AI/ML principles in solving complex technological challenges.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Repairo Tech -->
+            <div class="relative">
+              <div class="md:w-1/2 md:pl-12 ml-6 md:ml-auto">
+                <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-teal-400 border-4 border-neutral-900 transform -translate-x-1/2 mt-1.5"></div>
+                <span class="text-teal-400 font-mono">September 2022 – December 2024</span>
+                <h3 class="text-xl font-bold mt-1">Backend Development Consultant / Business Adviser</h3>
+                <p class="font-medium text-white">Repairo Tech. India</p>
+                <div class="mt-3 text-gray-300 space-y-2">
+                  <p class="flex items-start">
+                    <svg class="h-5 w-5 mr-2 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Porting Laravel PHP backend to Python Django, resolving backend bugs and issues.
+                  </p>
+                  <p class="flex items-start">
+                    <svg class="h-5 w-5 mr-2 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Advised developers and executives on service development, ensuring smooth operation and optimal user experience.
+                  </p>
+                  <p class="flex items-start">
+                    <svg class="h-5 w-5 mr-2 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Guided the startup owner in business decisions and operations.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Social Summer of Code -->
+            <div class="relative">
+              <div class="md:w-1/2 md:pr-12 md:text-right ml-6 md:ml-0">
+                <div class="absolute left-0 md:left-1/2 w-5 h-5 rounded-full bg-teal-400 border-4 border-neutral-900 transform -translate-x-1/2 mt-1.5"></div>
+                <span class="text-teal-400 font-mono">June 2024 - August 2024</span>
+                <h3 class="text-xl font-bold mt-1">Open Source Contributor</h3>
+                <p class="font-medium text-white">Social (Formerly Script Foundation)</p>
+                <div class="mt-3 text-gray-300 space-y-2">
+                  <p class="flex md:justify-end items-start">
+                    <svg class="h-5 w-5 mr-2 md:order-last md:ml-2 md:mr-0 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Collaborated as an open source contributor in the Social Summer of Code program, demonstrating commitment to collaborative software development.
+                  </p>
+                  <p class="flex md:justify-end items-start">
+                    <svg class="h-5 w-5 mr-2 md:order-last md:ml-2 md:mr-0 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Developed proficiency in version control systems, collaborative development workflows, and community-driven software development.
+                  </p>
+                  <p class="flex md:justify-end items-start">
+                    <svg class="h-5 w-5 mr-2 md:order-last md:ml-2 md:mr-0 text-teal-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Worked on projects that expanded technical knowledge in programming languages, development frameworks, and software engineering best practices.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex justify-center mt-16">
+          <a href="#skills" class="px-6 py-3 rounded border-2 border-teal-400 text-teal-400 font-medium hover:bg-teal-400/10 transition duration-300 flex items-center">
+            <span>View My Skills</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="2bfb0525-26d6-4535-9ff6-bfc4d0547072" data-section-id="2bfb0525-26d6-4535-9ff6-bfc4d0547072">
+
+
+<div id="root">
+  <section id="skills" class="py-20 bg-[#112240]">
+    <div class="container mx-auto px-6">
+      <h2 class="flex items-center text-3xl font-bold text-gray-200 mb-12">
+        <span class="text-[#64FFDA] font-mono mr-2">03.</span>
+        My Skills
+        <div class="h-px bg-gray-600 ml-4 w-16 sm:w-32 md:w-48"></div>
+      </h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="animate__animated animate__fadeIn">
+          <p class="text-gray-400 mb-8">
+            I've worked with a variety of technologies in the web development, machine learning, and cybersecurity world.
+            Here's a comprehensive list of my technical skills:
+          </p>
+          
+          <!-- Skills Categories -->
+          <div class="space-y-10">
+            <!-- Languages -->
+            <div>
+              <h3 class="text-xl font-bold text-gray-300 mb-4 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-[#64FFDA]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+                Programming Languages
+              </h3>
+              <div class="flex flex-wrap gap-3">
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Python</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Shell/Bash</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Java</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Golang</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">C/C++</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">JavaScript</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">HTML+CSS</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Libraries -->
+            <div>
+              <h3 class="text-xl font-bold text-gray-300 mb-4 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-[#64FFDA]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                </svg>
+                Libraries & ML
+              </h3>
+              <div class="flex flex-wrap gap-3">
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Huggingface</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">FastAI</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">PyTorch</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">TensorFlow</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">NumPy</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Pandas</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Matplotlib</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">scikit-learn</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">BeautifulSoup</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Frameworks -->
+            <div>
+              <h3 class="text-xl font-bold text-gray-300 mb-4 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-[#64FFDA]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                </svg>
+                Frameworks
+              </h3>
+              <div class="flex flex-wrap gap-3">
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Django</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Flask</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Django REST Framework</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">FastAPI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="animate__animated animate__fadeIn animate__delay-1s">
+          <div class="space-y-10">
+            <!-- Databases -->
+            <div>
+              <h3 class="text-xl font-bold text-gray-300 mb-4 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-[#64FFDA]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                </svg>
+                Databases & Cloud
+              </h3>
+              <div class="flex flex-wrap gap-3">
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">PostgreSQL</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">SQLite</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">MongoDB</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">MySQL</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Redis</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">MariaDB</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Dev Tools -->
+            <div>
+              <h3 class="text-xl font-bold text-gray-300 mb-4 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-[#64FFDA]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                Dev Tools
+              </h3>
+              <div class="flex flex-wrap gap-3">
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Postman</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">VSCode</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Git</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Github</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">SSH</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Vim</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Linux</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Areas of Interest -->
+            <div>
+              <h3 class="text-xl font-bold text-gray-300 mb-4 flex items-center">
+                <svg class="w-5 h-5 mr-2 text-[#64FFDA]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+                Areas of Interest
+              </h3>
+              <div class="flex flex-wrap gap-3">
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Backend Development</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">Cyber Security</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">System Administration (Linux)</span>
+                </div>
+                <div class="bg-[#0A192F] border border-gray-700 rounded-md px-3 py-2 text-gray-300 hover:border-[#64FFDA] hover:text-[#64FFDA] transition-colors duration-300">
+                  <span class="font-mono text-sm">DevOps</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skill Meter -->
+      <div class="mt-12 animate__animated animate__fadeIn animate__delay-2s">
+        <h3 class="text-xl font-bold text-gray-300 mb-6">My Strongest Skills</h3>
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-gray-400">Python & Django</span>
+              <span class="text-[#64FFDA]">95%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2.5">
+              <div class="bg-[#64FFDA] h-2.5 rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-gray-400">Machine Learning & AI</span>
+              <span class="text-[#64FFDA]">90%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2.5">
+              <div class="bg-[#64FFDA] h-2.5 rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-gray-400">Cybersecurity</span>
+              <span class="text-[#64FFDA]">85%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2.5">
+              <div class="bg-[#64FFDA] h-2.5 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-gray-400">System Administration (Linux)</span>
+              <span class="text-[#64FFDA]">88%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2.5">
+              <div class="bg-[#64FFDA] h-2.5 rounded-full" style="width: 88%"></div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-gray-400">Database Management</span>
+              <span class="text-[#64FFDA]">82%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2.5">
+              <div class="bg-[#64FFDA] h-2.5 rounded-full" style="width: 82%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="d39a2968-ceba-45ee-bcb4-3657e9581806" data-section-id="d39a2968-ceba-45ee-bcb4-3657e9581806">
+
+
+<div id="root">
+  <section id="projects" class="py-20 bg-[#0A192F]">
+    <div class="container mx-auto px-6">
+      <h2 class="flex items-center text-3xl font-bold text-gray-200 mb-12">
+        <span class="text-[#64FFDA] font-mono mr-2">04.</span>
+        Things I've Built
+        <div class="h-px bg-gray-600 ml-4 w-16 sm:w-32 md:w-48"></div>
+      </h2>
+      
+      <div class="space-y-24">
+        <!-- Project 1: Facemap -->
+        <div class="relative grid md:grid-cols-12 gap-10 items-center">
+          <!-- Project Image (Right side on desktop) -->
+          <div class="md:col-span-7 md:order-2 animate__animated animate__fadeInRight">
+            <div class="relative rounded-md overflow-hidden">
+              <div class="absolute inset-0 bg-[#64FFDA] bg-opacity-20 hover:bg-opacity-0 transition duration-300 z-10"></div>
+              <div class="w-full h-64 md:h-96 bg-[#112240] rounded-md flex items-center justify-center">
+                <div class="text-[#64FFDA] font-mono">
+                  <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                  </svg>
+                  <p class="text-center">Face Recognition App</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Content (Left side on desktop) -->
+          <div class="md:col-span-5 md:order-1 z-10 animate__animated animate__fadeInLeft">
+            <p class="text-[#64FFDA] font-mono mb-2">Featured Project</p>
+            <h3 class="text-2xl font-bold text-gray-200 mb-4">Facemap</h3>
+            <div class="bg-[#112240] p-6 rounded-md shadow-lg text-gray-400">
+              <p class="mb-4">
+                A high-accuracy face recognition photo sharing app with 99.2% accuracy. Developed custom Python modules for image filtering and metadata stripping. Won 2nd prize in HackEDCode hackathon.
+              </p>
+              <ul class="mt-4 mb-6 text-sm">
+                <li class="flex items-start mb-2">
+                  <div class="text-[#64FFDA] mr-2 mt-1">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span>Built with Django 4.2, PostgreSQL, deepface, and FaceNet</span>
+                </li>
+                <li class="flex items-start mb-2">
+                  <div class="text-[#64FFDA] mr-2 mt-1">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span>Google OAuth integration for secure authentication</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="text-[#64FFDA] mr-2 mt-1">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span>Responsive front-end with Bootstrap, HTML/CSS/JavaScript</span>
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <span class="inline-block px-3 py-1 text-[#64FFDA] font-mono text-sm">Django</span>
+              <span class="inline-block px-3 py-1 text-[#64FFDA] font-mono text-sm">FaceNet</span>
+              <span class="inline-block px-3 py-1 text-[#64FFDA] font-mono text-sm">PostgreSQL</span>
+              <span class="inline-block px-3 py-1 text-[#64FFDA] font-mono text-sm">Bootstrap</span>
+              <span class="inline-block px-3 py-1 text-[#64FFDA] font-mono text-sm">Google OAuth</span>
+            </div>
+            <div class="flex gap-5 mt-6">
+              <a href="#" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300" aria-label="GitHub Repository" target="_blank" rel="noopener noreferrer">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300" aria-label="External Link" target="_blank" rel="noopener noreferrer">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2: TorBreaker -->
+        <div class="relative grid md:grid-cols-12 gap-10 items-center">
+          <!-- Project Image (Left side on desktop) -->
+          <div class="md:col-span-7 md:order-1 animate__animated animate__fadeInLeft">
+            <div class="relative rounded-md overflow-hidden">
+              <div class="absolute inset-0 bg-[#64FFDA] bg-opacity-20 hover:bg-opacity-0 transition duration-300 z-10"></div>
+              <div class="w-full h-64 md:h-96 bg-[#112240] rounded-md flex items-center justify-center">
+                <div class="text-[#64FFDA] font-mono">
+                  <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                  </svg>
+                  <p class="text-center">Cybersecurity Platform</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Content (Right side on desktop) -->
+          <div class="md:col-span-5 md:order-2 z-10 animate__animated animate__fadeInRight">
+            <p class="text-[#64FFDA] font-mono mb-2">Featured Project</p>
+            <h3 class="text-2xl font-bold text-gray-200 mb-4">TorBreaker</h3>
+            <div class="bg-[#112240] p-6 rounded-md shadow-lg text-gray-400">
+              <p class="mb-4">
+                A robust cybersecurity platform built during Smart India Hackathon (SIH) 2024, capable of de-anonymizing onion sites operating on the Tor Network. Includes automated URL crawling and AI-driven site legality validation.
+              </p>
+              <ul class="mt-4 mb-6 text-sm">
+                <li class="flex items-start mb-2">
+                  <div class="text-[#64FFDA] mr-2 mt-1">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span>15+ custom Python modules for misconfiguration detection</span>
+                </li>
+                <li class="flex items-start mb-2">
+                  <div class="text-[#64FFDA] mr-2 mt-1">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span>Django with Celery and Redis for task queue management</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="text-[#64FFDA] mr-2 mt-1">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.75 12.75L10 15.25L16.25 8.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span>MongoDB database for flexible data storage</span>
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <span class="inline-block px-3 py-1 text-[#64FFDA] font-mono text-sm">Django</span>
+              <span class="inline-block px-3 py-1 text-[#64FFDA] font-mono text-sm">Celery</span>
+              <span class="inline-block px-3 py-1 text-[#64FFDA] font-mono text-sm">Redis</span>
+              <span class="inline-block px-3 py-1 text-[#64FFDA] font-mono text-sm">MongoDB</span>
+              <span class="inline-block px-3 py-1 text-[#64FFDA] font-mono text-sm">Python</span>
+            </div>
+            <div class="flex gap-5 mt-6">
+              <a href="#" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300" aria-label="GitHub Repository" target="_blank" rel="noopener noreferrer">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-300 hover:text-[#64FFDA] transition-colors duration-300" aria-label="External Link" target="_blank" rel="noopener noreferrer">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Other Projects Section -->
+        <div class="mt-20">
+          <h3 class="text-center font-bold text-2xl text-gray-200 mb-10">Other Noteworthy Projects</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project Card 1 -->
+            <div class="bg-[#112240] rounded-md p-6 flex flex-col h-full hover:transform hover:-translate-y-2 transition-all duration-300">
+              <div class="flex justify-between items-start mb-6">
+                <div class="text-[#64FFDA]">
+                  <svg class="w-10 h-10" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                  </svg>
+                </div>
+                <div class="flex gap-3">
+                  <a href="#" class="text-gray-400 hover:text-[#64FFDA]" aria-label="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-[#64FFDA]" aria-label="External Link">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <h4 class="text-gray-200 font-bold text-xl mb-2">ML-Powered Text Analyzer</h4>
+              <p class="text-gray-400 mb-6 flex-grow">A machine learning tool that analyzes text sentiment, extracts key information, and categorizes content using NLP techniques.</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-xs text-gray-300 font-mono">Python</span>
+                <span class="text-xs text-gray-300 font-mono">NLP</span>
+                <span class="text-xs text-gray-300 font-mono">TensorFlow</span>
+                <span class="text-xs text-gray-300 font-mono">Flask</span>
+              </div>
+            </div>
+            
+            <!-- Project Card 2 -->
+            <div class="bg-[#112240] rounded-md p-6 flex flex-col h-full hover:transform hover:-translate-y-2 transition-all duration-300">
+              <div class="flex justify-between items-start mb-6">
+                <div class="text-[#64FFDA]">
+                  <svg class="w-10 h-10" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                  </svg>
+                </div>
+                <div class="flex gap-3">
+                  <a href="#" class="text-gray-400 hover:text-[#64FFDA]" aria-label="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-[#64FFDA]" aria-label="External Link">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <h4 class="text-gray-200 font-bold text-xl mb-2">Secure API Gateway</h4>
+              <p class="text-gray-400 mb-6 flex-grow">A security-focused API gateway that provides authentication, rate limiting, and intrusion detection for microservices.</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-xs text-gray-300 font-mono">Golang</span>
+                <span class="text-xs text-gray-300 font-mono">JWT</span>
+                <span class="text-xs text-gray-300 font-mono">Redis</span>
+                <span class="text-xs text-gray-300 font-mono">Docker</span>
+              </div>
+            </div>
+            
+            <!-- Project Card 3 -->
+            <div class="bg-[#112240] rounded-md p-6 flex flex-col h-full hover:transform hover:-translate-y-2 transition-all duration-300">
+              <div class="flex justify-between items-start mb-6">
+                <div class="text-[#64FFDA]">
+                  <svg class="w-10 h-10" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
+                  </svg>
+                </div>
+                <div class="flex gap-3">
+                  <a href="#" class="text-gray-400 hover:text-[#64FFDA]" aria-label="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-[#64FFDA]" aria-label="External Link">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <h4 class="text-gray-200 font-bold text-xl mb-2">Linux System Monitor</h4>
+              <p class="text-gray-400 mb-6 flex-grow">A lightweight but powerful system monitoring tool for Linux servers with alerting capabilities and historical data analysis.</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-xs text-gray-300 font-mono">Python</span>
+                <span class="text-xs text-gray-300 font-mono">Bash</span>
+                <span class="text-xs text-gray-300 font-mono">SQLite</span>
+                <span class="text-xs text-gray-300 font-mono">Chart.js</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center mt-12">
+            <a href="https://github.com/spignelon" target="_blank" rel="noopener noreferrer" class="inline-block border border-[#64FFDA] text-[#64FFDA] px-6 py-3 rounded font-medium hover:bg-[#64FFDA]/10 transition-all duration-300">
+              View More on GitHub
+              <svg class="w-4 h-4 inline-block ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="7f2f349c-19d5-45ff-8676-b4e37d5239e4" data-section-id="7f2f349c-19d5-45ff-8676-b4e37d5239e4">
+
+
+<div id="root">
+  <section id="achievements" class="py-20 bg-[#112240]">
+    <div class="container mx-auto px-6">
+      <h2 class="flex items-center text-3xl font-bold text-gray-200 mb-12">
+        <span class="text-[#64FFDA] font-mono mr-2">05.</span>
+        My Achievements
+        <div class="h-px bg-gray-600 ml-4 w-16 sm:w-32 md:w-48"></div>
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="animate__animated animate__fadeIn">
+          <p class="text-gray-400 mb-8">I've been fortunate to earn recognition in various competitions and platforms, showcasing my technical skills and problem-solving abilities:</p>
+          
+          <!-- Leetcode and Quine Stats -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            <div class="bg-[#0A192F] p-6 rounded-md border border-gray-700 hover:border-[#64FFDA] transition-colors duration-300">
+              <div class="flex items-center mb-4">
+                <svg class="w-8 h-8 text-[#64FFDA]" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.111.744 1.715.744.603 0 1.213-.229 1.713-.744.513-.513.744-1.123.744-1.727 0-.604-.231-1.213-.744-1.714L12.13 2.249a5.637 5.637 0 0 0-4.056-1.587c-1.617 0-3.175.662-4.298 1.825L.89 5.449A5.748 5.748 0 0 0 0 9.766c0 1.582.537 3.123 1.713 4.32l6.9 6.942a5.686 5.686 0 0 0 4.297 1.835c1.617 0 3.175-.642 4.29-1.835l6.947-6.942c.992-.993 1.677-2.503 1.835-3.585.156-1.092-.18-2.227-1.062-3.087-.709-.71-1.764-1.081-2.818-1.011-1.053.073-2.158.609-2.868 1.319l-3.256 3.224-.346.354a.74.74 0 0 1-.53.22.714.714 0 0 1-.539-.22c-.293-.293-.293-.768 0-1.06l7.11-7.11"></path>
+                </svg>
+                <h3 class="text-xl font-bold text-gray-300 ml-3">LeetCode Status</h3>
+              </div>
+              <p class="text-gray-400 mb-2">Contest Rating: <span class="text-[#64FFDA]">1753</span></p>
+              <p class="text-gray-400">Top <span class="text-[#64FFDA]">9.67%</span> of users</p>
+              <a href="https://leetcode.com/u/spignelon/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#64FFDA] hover:underline mt-4 inline-block">
+                View LeetCode Profile →
+              </a>
+            </div>
+            
+            <div class="bg-[#0A192F] p-6 rounded-md border border-gray-700 hover:border-[#64FFDA] transition-colors duration-300">
+              <div class="flex items-center mb-4">
+                <svg class="w-8 h-8 text-[#64FFDA]" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3.05 13.05a7 7 0 0 1 0-2.1 1 1 0 0 0 .7-1.11 7.05 7.05 0 0 1 .84-1.9 1 1 0 0 0-.27-1.29 7.1 7.1 0 0 1 1.4-1.4A1 1 0 0 0 6.95 5a7.05 7.05 0 0 1 1.9-.84 1 1 0 0 0 .82-.87 7 7 0 0 1 2.1 0 1 1 0 0 0 .82.87 7.05 7.05 0 0 1 1.9.84 1 1 0 0 0 1.29-.26 7.1 7.1 0 0 1 1.4 1.4 1 1 0 0 0 .26 1.29 7.05 7.05 0 0 1 .84 1.9 1 1 0 0 0 1.11.7 7 7 0 0 1 0 2.1 1 1 0 0 0-.7 1.11 7.05 7.05 0 0 1-.84 1.9 1 1 0 0 0 .27 1.29 7.1 7.1 0 0 1-1.4 1.4 1 1 0 0 0-1.29.27 7.05 7.05 0 0 1-1.9.84 1 1 0 0 0-.82.87 7 7 0 0 1-2.1 0 1 1 0 0 0-.82-.87 7.05 7.05 0 0 1-1.9-.84 1 1 0 0 0-1.29.26 7.1 7.1 0 0 1-1.4-1.4 1 1 0 0 0-.26-1.29 7.05 7.05 0 0 1-.84-1.9 1 1 0 0 0-1.11-.7zM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                </svg>
+                <h3 class="text-xl font-bold text-gray-300 ml-3">Quine DevRank</h3>
+              </div>
+              <p class="text-gray-400 mb-2">Global Ranking: <span class="text-[#64FFDA]">Top 10%</span></p>
+              <p class="text-gray-400">Recognized for code quality</p>
+              <a href="https://quine.sh/user/spignelon" target="_blank" rel="noopener noreferrer" class="text-sm text-[#64FFDA] hover:underline mt-4 inline-block">
+                View Quine Profile →
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="animate__animated animate__fadeIn animate__delay-1s">
+          <!-- Hackathon Wins Grid -->
+          <div class="bg-[#0A192F] p-6 rounded-md border border-gray-700">
+            <h3 class="text-xl font-bold text-gray-300 mb-6 flex items-center">
+              <svg class="w-6 h-6 mr-2 text-[#64FFDA]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM7 10.82C5.84 10.4 5 9.3 5 8V7h2v3.82zM19 8c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
+              </svg>
+              Hackathon & Competition Wins
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex">
+                <div class="text-[#64FFDA] mr-3 mt-1">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 2.12 13.38 1 12 1S9.5 2.12 9.5 3.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-gray-200 font-semibold">1st runner-up at Amazon Sambhav 2024</p>
+                  <p class="text-gray-400 text-sm">National Level</p>
+                </div>
+              </li>
+              <li class="flex">
+                <div class="text-[#64FFDA] mr-3 mt-1">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 2.12 13.38 1 12 1S9.5 2.12 9.5 3.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-gray-200 font-semibold">1st Rank in Intel Gen AI Hackathon at IIT Delhi</p>
+                  <p class="text-gray-400 text-sm">Premier Institution Competition</p>
+                </div>
+              </li>
+              <li class="flex">
+                <div class="text-[#64FFDA] mr-3 mt-1">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 2.12 13.38 1 12 1S9.5 2.12 9.5 3.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-gray-200 font-semibold">Winner at International Intel X Red Hat AI Hackathon</p>
+                  <p class="text-gray-400 text-sm">International Competition</p>
+                </div>
+              </li>
+              <li class="flex">
+                <div class="text-[#64FFDA] mr-3 mt-1">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 2.12 13.38 1 12 1S9.5 2.12 9.5 3.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-gray-200 font-semibold">2nd Rank in hackEDCode 2.0 Hackathon at GGSIPU</p>
+                  <p class="text-gray-400 text-sm">University Competition</p>
+                </div>
+              </li>
+              <li class="flex">
+                <div class="text-[#64FFDA] mr-3 mt-1">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 2.12 13.38 1 12 1S9.5 2.12 9.5 3.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-gray-200 font-semibold">3rd Rank in TazerHunt CTF by DTU</p>
+                  <p class="text-gray-400 text-sm">Cybersecurity Competition</p>
+                </div>
+              </li>
+              <li class="flex">
+                <div class="text-[#64FFDA] mr-3 mt-1">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 2.12 13.38 1 12 1S9.5 2.12 9.5 3.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-gray-200 font-semibold">3rd Rank in HackDUCS at Delhi University</p>
+                  <p class="text-gray-400 text-sm">University Hackathon</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="mt-6 text-center">
+            <a href="#" class="inline-block border border-[#64FFDA] text-[#64FFDA] px-6 py-3 rounded font-medium hover:bg-[#64FFDA]/10 transition-all duration-300">
+              View All Certificates
+              <svg class="w-4 h-4 inline-block ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Achievement Counter Section -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 animate__animated animate__fadeIn animate__delay-2s">
+        <div class="bg-[#0A192F] p-6 rounded-md border border-gray-700 text-center">
+          <div class="text-4xl font-bold text-[#64FFDA] mb-2">7+</div>
+          <p class="text-gray-300">Hackathons Won</p>
+        </div>
+        <div class="bg-[#0A192F] p-6 rounded-md border border-gray-700 text-center">
+          <div class="text-4xl font-bold text-[#64FFDA] mb-2">1753</div>
+          <p class="text-gray-300">LeetCode Rating</p>
+        </div>
+        <div class="bg-[#0A192F] p-6 rounded-md border border-gray-700 text-center">
+          <div class="text-4xl font-bold text-[#64FFDA] mb-2">Top 10%</div>
+          <p class="text-gray-300">Global DevRank</p>
+        </div>
+        <div class="bg-[#0A192F] p-6 rounded-md border border-gray-700 text-center">
+          <div class="text-4xl font-bold text-[#64FFDA] mb-2">2+</div>
+          <p class="text-gray-300">Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="a2067111-4182-4d16-b350-b00f6302e076" data-section-id="a2067111-4182-4d16-b350-b00f6302e076">
+
+
+<div id="root">
+  <section id="contact" class="py-20 bg-[#0A192F]">
+    <div class="container mx-auto px-6">
+      <h2 class="flex items-center text-3xl font-bold text-gray-200 mb-8">
+        <span class="text-[#64FFDA] font-mono mr-2">06.</span>
+        Get In Touch
+        <div class="h-px bg-gray-600 ml-4 w-16 sm:w-32 md:w-48"></div>
+      </h2>
+      
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-gray-400 text-lg mb-10">
+          I'm currently open to new opportunities and collaborations. Whether you have a question, a project idea, or just want to say hello, feel free to reach out to me!
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate__animated animate__fadeIn">
+          <div class="bg-[#112240] p-6 rounded-md hover:transform hover:-translate-y-2 transition-all duration-300">
+            <div class="text-[#64FFDA] mb-4">
+              <svg class="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-200 mb-2">Email</h3>
+            <a href="mailto:ujjawalsaini47@gmail.com" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">ujjawalsaini47@gmail.com</a>
+          </div>
+          
+          <div class="bg-[#112240] p-6 rounded-md hover:transform hover:-translate-y-2 transition-all duration-300">
+            <div class="text-[#64FFDA] mb-4">
+              <svg class="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-200 mb-2">LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 text-sm  hover:text-[#64FFDA] transition-colors duration-300">linkedin.com/in/spignelon</a>
+          </div>
+          
+          <div class="bg-[#112240] p-6 rounded-md hover:transform hover:-translate-y-2 transition-all duration-300">
+            <div class="text-[#64FFDA] mb-4">
+              <svg class="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.2125 5.65605C21.4491 5.99375 20.6395 6.21555 19.8106 6.31411C20.6839 5.79132 21.3374 4.9689 21.6493 4.00005C20.8287 4.48761 19.9305 4.83077 18.9938 5.01461C18.2031 4.17106 17.098 3.69303 15.9418 3.69434C13.6326 3.69434 11.7597 5.56661 11.7597 7.87683C11.7597 8.20458 11.7973 8.52242 11.8676 8.82909C8.39047 8.65404 5.31007 6.99005 3.24678 4.45941C2.87529 5.09767 2.68005 5.82318 2.68104 6.56167C2.68104 8.01259 3.4196 9.29324 4.54149 10.043C3.87737 10.022 3.22788 9.84264 2.64718 9.51973C2.64654 9.5373 2.64654 9.55487 2.64654 9.57148C2.64654 11.5984 4.08819 13.2892 6.00199 13.6731C5.6428 13.7703 5.27232 13.8194 4.90022 13.8191C4.62997 13.8191 4.36784 13.7942 4.11279 13.7453C4.64531 15.4065 6.18886 16.6159 8.0196 16.6491C6.53813 17.8118 4.70869 18.4426 2.82543 18.4399C2.49212 18.4402 2.15909 18.4205 1.82812 18.3811C3.74004 19.6102 5.96552 20.2625 8.23842 20.2601C15.9316 20.2601 20.138 13.8875 20.138 8.36111C20.138 8.1803 20.1336 7.99886 20.1256 7.81997C20.9443 7.22845 21.651 6.49567 22.2125 5.65605Z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-200 mb-2">Twitter</h3>
+            <a href="https://twitter.com/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">@spignelon</a>
+          </div>
+        </div>
+        
+        <h3 class="text-2xl font-bold text-gray-200 mb-6">Send Me a Message</h3>
+        <form class="space-y-6 animate__animated animate__fadeIn">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-gray-400 mb-2 text-left">Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Your Name" 
+                class="w-full bg-[#112240] border border-gray-700 rounded-md py-3 px-4 text-gray-300 focus:outline-none focus:border-[#64FFDA] transition-colors duration-300"
+                required
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-gray-400 mb-2 text-left">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Your Email" 
+                class="w-full bg-[#112240] border border-gray-700 rounded-md py-3 px-4 text-gray-300 focus:outline-none focus:border-[#64FFDA] transition-colors duration-300"
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <label for="subject" class="block text-gray-400 mb-2 text-left">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject" 
+              placeholder="Subject" 
+              class="w-full bg-[#112240] border border-gray-700 rounded-md py-3 px-4 text-gray-300 focus:outline-none focus:border-[#64FFDA] transition-colors duration-300"
+              required
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-gray-400 mb-2 text-left">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="6" 
+              placeholder="Your Message" 
+              class="w-full bg-[#112240] border border-gray-700 rounded-md py-3 px-4 text-gray-300 focus:outline-none focus:border-[#64FFDA] transition-colors duration-300"
+              required
+            ></textarea>
+          </div>
+          <div>
+            <button 
+              type="submit" 
+              class="bg-transparent border-2 border-[#64FFDA] text-[#64FFDA] px-8 py-3 rounded-md hover:bg-[#64FFDA]/10 transition-all duration-300"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="mt-16 flex flex-wrap justify-center gap-6 animate__animated animate__fadeIn">
+        <a href="https://github.com/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="https://leetcode.com/u/spignelon/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.111.744 1.715.744.603 0 1.213-.229 1.713-.744.513-.513.744-1.123.744-1.727 0-.604-.231-1.213-.744-1.714L12.13 2.249a5.637 5.637 0 0 0-4.056-1.587c-1.617 0-3.175.662-4.298 1.825L.89 5.449A5.748 5.748 0 0 0 0 9.766c0 1.582.537 3.123 1.713 4.32l6.9 6.942a5.686 5.686 0 0 0 4.297 1.835c1.617 0 3.175-.642 4.29-1.835l6.947-6.942c.992-.993 1.677-2.503 1.835-3.585.156-1.092-.18-2.227-1.062-3.087-.709-.71-1.764-1.081-2.818-1.011-1.053.073-2.158.609-2.868 1.319l-3.256 3.224-.346.354a.74.74 0 0 1-.53.22.714.714 0 0 1-.539-.22c-.293-.293-.293-.768 0-1.06l7.11-7.11"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a href="https://twitter.com/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.2125 5.65605C21.4491 5.99375 20.6395 6.21555 19.8106 6.31411C20.6839 5.79132 21.3374 4.9689 21.6493 4.00005C20.8287 4.48761 19.9305 4.83077 18.9938 5.01461C18.2031 4.17106 17.098 3.69303 15.9418 3.69434C13.6326 3.69434 11.7597 5.56661 11.7597 7.87683C11.7597 8.20458 11.7973 8.52242 11.8676 8.82909C8.39047 8.65404 5.31007 6.99005 3.24678 4.45941C2.87529 5.09767 2.68005 5.82318 2.68104 6.56167C2.68104 8.01259 3.4196 9.29324 4.54149 10.043C3.87737 10.022 3.22788 9.84264 2.64718 9.51973C2.64654 9.5373 2.64654 9.55487 2.64654 9.57148C2.64654 11.5984 4.08819 13.2892 6.00199 13.6731C5.6428 13.7703 5.27232 13.8194 4.90022 13.8191C4.62997 13.8191 4.36784 13.7942 4.11279 13.7453C4.64531 15.4065 6.18886 16.6159 8.0196 16.6491C6.53813 17.8118 4.70869 18.4426 2.82543 18.4399C2.49212 18.4402 2.15909 18.4205 1.82812 18.3811C3.74004 19.6102 5.96552 20.2625 8.23842 20.2601C15.9316 20.2601 20.138 13.8875 20.138 8.36111C20.138 8.1803 20.1336 7.99886 20.1256 7.81997C20.9443 7.22845 21.651 6.49567 22.2125 5.65605Z"/>
+          </svg>
+        </a>
+        <a href="https://ujjawalsaini.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.351 8.019l-6.37-6.37a5.63 5.63 0 0 0-7.962 0l-6.37 6.37a5.63 5.63 0 0 0 0 7.962l6.37 6.37a5.63 5.63 0 0 0 7.962 0l6.37-6.37a5.63 5.63 0 0 0 0-7.962zM12 15.953a3.953 3.953 0 1 1 0-7.906 3.953 3.953 0 0 1 0 7.906z"/>
+          </svg>
+        </a>
+        <a href="https://t.me/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="00a4daeb-e57b-4cb8-94cd-870b78fba4f1" data-section-id="00a4daeb-e57b-4cb8-94cd-870b78fba4f1">
+
+
+<div id="root">
+  <footer id="footer" class="bg-[#112240] text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-2">
+          <h3 class="text-xl font-bold text-[#64FFDA] mb-4">Ujjawal Saini</h3>
+          <p class="text-gray-400 mb-6">A versatile developer and hacker proficient in Full Stack Web Development, Machine Learning, Deep Learning, and Cyber Security.</p>
+          <div class="flex space-x-4">
+            <a href="https://github.com/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300" aria-label="GitHub">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300" aria-label="LinkedIn">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+            </a>
+            <a href="https://leetcode.com/u/spignelon/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300" aria-label="LeetCode">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.111.744 1.715.744.603 0 1.213-.229 1.713-.744.513-.513.744-1.123.744-1.727 0-.604-.231-1.213-.744-1.714L12.13 2.249a5.637 5.637 0 0 0-4.056-1.587c-1.617 0-3.175.662-4.298 1.825L.89 5.449A5.748 5.748 0 0 0 0 9.766c0 1.582.537 3.123 1.713 4.32l6.9 6.942a5.686 5.686 0 0 0 4.297 1.835c1.617 0 3.175-.642 4.29-1.835l6.947-6.942c.992-.993 1.677-2.503 1.835-3.585.156-1.092-.18-2.227-1.062-3.087-.709-.71-1.764-1.081-2.818-1.011-1.053.073-2.158.609-2.868 1.319l-3.256 3.224-.346.354a.74.74 0 0 1-.53.22.714.714 0 0 1-.539-.22c-.293-.293-.293-.768 0-1.06l7.11-7.11"></path>
+              </svg>
+            </a>
+            <a href="https://twitter.com/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300" aria-label="Twitter">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.2125 5.65605C21.4491 5.99375 20.6395 6.21555 19.8106 6.31411C20.6839 5.79132 21.3374 4.9689 21.6493 4.00005C20.8287 4.48761 19.9305 4.83077 18.9938 5.01461C18.2031 4.17106 17.098 3.69303 15.9418 3.69434C13.6326 3.69434 11.7597 5.56661 11.7597 7.87683C11.7597 8.20458 11.7973 8.52242 11.8676 8.82909C8.39047 8.65404 5.31007 6.99005 3.24678 4.45941C2.87529 5.09767 2.68005 5.82318 2.68104 6.56167C2.68104 8.01259 3.4196 9.29324 4.54149 10.043C3.87737 10.022 3.22788 9.84264 2.64718 9.51973C2.64654 9.5373 2.64654 9.55487 2.64654 9.57148C2.64654 11.5984 4.08819 13.2892 6.00199 13.6731C5.6428 13.7703 5.27232 13.8194 4.90022 13.8191C4.62997 13.8191 4.36784 13.7942 4.11279 13.7453C4.64531 15.4065 6.18886 16.6159 8.0196 16.6491C6.53813 17.8118 4.70869 18.4426 2.82543 18.4399C2.49212 18.4402 2.15909 18.4205 1.82812 18.3811C3.74004 19.6102 5.96552 20.2625 8.23842 20.2601C15.9316 20.2601 20.138 13.8875 20.138 8.36111C20.138 8.1803 20.1336 7.99886 20.1256 7.81997C20.9443 7.22845 21.651 6.49567 22.2125 5.65605Z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#hero" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">Home</a>
+            </li>
+            <li>
+              <a href="#about" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">About</a>
+            </li>
+            <li>
+              <a href="#experience" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">Experience</a>
+            </li>
+            <li>
+              <a href="#skills" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">Skills</a>
+            </li>
+            <li>
+              <a href="#projects" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">Projects</a>
+            </li>
+            <li>
+              <a href="#achievements" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">Achievements</a>
+            </li>
+            <li>
+              <a href="#contact" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">Contact</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">External Links</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="https://github.com/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://leetcode.com/u/spignelon/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">LeetCode</a>
+            </li>
+            <li>
+              <a href="https://quine.sh/user/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">Quine</a>
+            </li>
+            <li>
+              <a href="https://ujjawalsaini.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">Blog</a>
+            </li>
+            <li>
+              <a href="https://t.me/spignelon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#64FFDA] transition-colors duration-300">Telegram</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8 text-center">
+        <a href="#hero" class="inline-block text-[#64FFDA] mb-8 hover:opacity-80 transition-opacity duration-300">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+          </svg>
+          <span class="sr-only">Back to top</span>
+        </a>
+        
+        <p class="text-gray-500 mb-2">
+          Built with 
+          <span class="text-[#64FFDA]">❤️</span> by Ujjawal Saini
+        </p>
+        
+        <p class="text-gray-600 text-sm">
+          © <span id="current-year"></span> Ujjawal Saini. All rights reserved.
+        </p>
+        
+        <div class="mt-4 text-sm text-gray-600">
+          <a href="/resume.pdf" class="inline-block text-gray-500 hover:text-[#64FFDA] transition-colors duration-300 mx-2">Resume</a>
+          <span class="text-gray-700">•</span>
+          <a href="#" class="inline-block text-gray-500 hover:text-[#64FFDA] transition-colors duration-300 mx-2">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Set current year in footer
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80, // Adjust for header height
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    </script>
+  </footer>
+</div>
+</element></div>
+      </main>
+
+      
+   </body>
+</html>
