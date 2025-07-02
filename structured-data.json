@@ -1,0 +1,53 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ujjawal Saini",
+  "jobTitle": "Full Stack Developer, AI/ML Engineer & Cybersecurity Enthusiast",
+  "description": "Versatile developer proficient in Full Stack Web Development, Machine Learning, Deep Learning, and Cyber Security. Multiple hackathon winner and open source contributor.",
+  "url": "https://spignelon.github.io",
+  "image": "https://spignelon.github.io/programmer-icon.png",
+  "sameAs": [
+    "https://github.com/spignelon",
+    "https://www.linkedin.com/in/spignelon",
+    "https://t.me/spignelon",
+    "https://ujjawalsaini.hashnode.dev/"
+  ],
+  "email": "ujjawalsaini47@gmail.com",
+  "knowsAbout": [
+    "Python",
+    "Django", 
+    "Flask",
+    "Machine Learning",
+    "Deep Learning",
+    "TensorFlow",
+    "PyTorch",
+    "Cybersecurity",
+    "Backend Development",
+    "PostgreSQL",
+    "MongoDB",
+    "Linux",
+    "Golang"
+  ],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Guru Gobind Singh Indraprastha University",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Delhi",
+      "addressCountry": "India"
+    }
+  },
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Software Developer",
+    "occupationLocation": {
+      "@type": "City",
+      "name": "Delhi, India"
+    },
+    "skills": "Python, Django, Machine Learning, Cybersecurity, Backend Development"
+  },
+  "award": [
+    "Amazon Sambhav Hackathon Winner",
+    "Intel GenAI Hackathon at IIT Delhi Winner"
+  ]
+}

@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Block access to sensitive files
+Disallow: /private/
+Disallow: /.git/
+Disallow: /admin/
+Disallow: /temp/
+
+# Allow access to CSS and JS files for better indexing
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://spignelon.github.io/sitemap.xml
+
+# Crawl delay (optional, 1 second)
+Crawl-delay: 1
