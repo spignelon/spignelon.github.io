@@ -1,0 +1,86 @@
+---
+const contactLinks = [
+  {
+    name: 'Email',
+    value: 'ujjawalsaini47@gmail.com',
+    href: 'mailto:ujjawalsaini47@gmail.com',
+  },
+  {
+    name: 'GitHub',
+    value: 'github.com/spignelon',
+    href: 'https://github.com/spignelon',
+  },
+  {
+    name: 'LinkedIn',
+    value: 'linkedin.com/in/spignelon',
+    href: 'https://www.linkedin.com/in/spignelon',
+  },
+  {
+    name: 'Telegram',
+    value: '@spignelon',
+    href: 'https://t.me/spignelon',
+  },
+  {
+    name: 'Twitter / X',
+    value: '@spignelon',
+    href: 'https://twitter.com/spignelon',
+  },
+  {
+    name: 'Blog',
+    value: 'ujjawalsaini.hashnode.dev',
+    href: 'https://ujjawalsaini.hashnode.dev/',
+  },
+];
+---
+
+<section id="contact" class="py-24 px-6 bg-slate-900/20">
+  <div class="max-w-2xl mx-auto text-center">
+    <span class="section-number">06.</span>
+    <h2 class="section-heading mb-6">Get In Touch</h2>
+
+    <p class="text-slate-400 text-lg leading-relaxed mb-10">
+      I'm open to new opportunities, collaborations, and interesting conversations.
+      Whether you have a project idea, a question, or just want to say hello —
+      my inbox is always open.
+    </p>
+
+    <a
+      href="mailto:ujjawalsaini47@gmail.com"
+      class="inline-flex items-center gap-3 px-8 py-4 border border-cyan-500/40 text-cyan-400 font-mono rounded-lg hover:bg-cyan-500/10 transition-colors duration-150 text-base mb-16 group"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform duration-150"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+      </svg>
+      Say Hello
+    </a>
+
+    <!-- Contact grid -->
+    <div class="grid sm:grid-cols-3 gap-3 text-left">
+      {
+        contactLinks.map((link) => (
+          <a
+            href={link.href}
+            target={link.href.startsWith('mailto') ? undefined : '_blank'}
+            rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+            class="card card-hover p-4 rounded-xl group"
+          >
+            <p class="text-xs font-mono text-slate-600 uppercase tracking-widest mb-1.5">{link.name}</p>
+            <p class="text-slate-400 text-sm group-hover:text-cyan-400 transition-colors duration-150 truncate font-mono">
+              {link.value}
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

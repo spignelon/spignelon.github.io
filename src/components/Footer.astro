@@ -1,0 +1,36 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="py-8 px-6 border-t border-slate-800/60">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+    <p class="font-mono text-slate-600">
+      Designed & built by <span class="text-slate-500">Ujjawal Saini</span>
+    </p>
+    <p class="font-mono text-slate-700 text-xs hidden sm:block">© {year}</p>
+    <div class="flex items-center gap-6">
+      <a
+        href="https://github.com/spignelon"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-mono text-slate-600 hover:text-slate-400 transition-colors duration-150 text-xs"
+      >
+        GitHub
+      </a>
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-mono text-slate-600 hover:text-cyan-400 transition-colors duration-150 text-xs"
+      >
+        Resume
+      </a>
+      <a
+        href="/blog"
+        class="font-mono text-slate-600 hover:text-slate-400 transition-colors duration-150 text-xs"
+      >
+        Blog
+      </a>
+    </div>
+  </div>
+</footer>

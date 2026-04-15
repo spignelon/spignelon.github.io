@@ -1,0 +1,124 @@
+---
+---
+
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a
+      href="/"
+      class="font-mono text-cyan-400 font-semibold text-lg hover:text-cyan-300 transition-colors"
+    >
+      ujjawal<span class="text-slate-600">.</span>dev
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
+      <a href="/#about" class="nav-link">About</a>
+      <a href="/#experience" class="nav-link">Experience</a>
+      <a href="/#projects" class="nav-link">Projects</a>
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/#contact" class="nav-link">Contact</a>
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-4 py-1.5 text-sm font-mono border border-cyan-500/40 text-cyan-400 rounded-md hover:bg-cyan-500/10 transition-colors"
+      >
+        Resume ↗
+      </a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="menu-toggle"
+      class="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8 p-1"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="menu-bar block w-full h-0.5 bg-slate-400 transition-all duration-200 origin-center"></span>
+      <span class="menu-bar block w-full h-0.5 bg-slate-400 transition-all duration-200"></span>
+      <span class="menu-bar block w-full h-0.5 bg-slate-400 transition-all duration-200 origin-center"></span>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-md"
+    role="navigation"
+    aria-label="Mobile navigation"
+  >
+    <nav class="max-w-6xl mx-auto px-6 py-6 flex flex-col gap-5">
+      <a href="/#about" class="mobile-nav-link">About</a>
+      <a href="/#experience" class="mobile-nav-link">Experience</a>
+      <a href="/#projects" class="mobile-nav-link">Projects</a>
+      <a href="/blog" class="mobile-nav-link">Blog</a>
+      <a href="/#contact" class="mobile-nav-link">Contact</a>
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-fit px-4 py-2 text-sm font-mono border border-cyan-500/40 text-cyan-400 rounded-md hover:bg-cyan-500/10 transition-colors"
+      >
+        Resume ↗
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav-link {
+    @apply text-sm font-mono text-slate-400 hover:text-slate-100 transition-colors duration-150;
+  }
+  .mobile-nav-link {
+    @apply font-mono text-xl text-slate-300 hover:text-cyan-400 transition-colors duration-150;
+  }
+  #nav.scrolled {
+    @apply bg-slate-950/90 backdrop-blur-md border-b border-slate-800/60;
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('nav');
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const bars = document.querySelectorAll<HTMLElement>('.menu-bar');
+
+  // Scroll-based nav styling
+  const handleScroll = () => {
+    nav?.classList.toggle('scrolled', window.scrollY > 24);
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // Hamburger toggle
+  let isOpen = false;
+  toggle?.addEventListener('click', () => {
+    isOpen = !isOpen;
+    menu?.classList.toggle('hidden', !isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+
+    if (isOpen) {
+      bars[0]?.classList.add('rotate-45', 'translate-y-2');
+      bars[1]?.classList.add('opacity-0', 'scale-x-0');
+      bars[2]?.classList.add('-rotate-45', '-translate-y-2');
+    } else {
+      bars[0]?.classList.remove('rotate-45', 'translate-y-2');
+      bars[1]?.classList.remove('opacity-0', 'scale-x-0');
+      bars[2]?.classList.remove('-rotate-45', '-translate-y-2');
+    }
+  });
+
+  // Close on link click
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      isOpen = false;
+      menu.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+      bars[0]?.classList.remove('rotate-45', 'translate-y-2');
+      bars[1]?.classList.remove('opacity-0', 'scale-x-0');
+      bars[2]?.classList.remove('-rotate-45', '-translate-y-2');
+    });
+  });
+</script>

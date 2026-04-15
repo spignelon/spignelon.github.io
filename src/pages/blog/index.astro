@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../../components/Footer.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Writing — Ujjawal Saini"
+  description="Thoughts on backend architecture, generative AI, data science, and software engineering craft."
+>
+  <div class="max-w-3xl mx-auto px-6 pt-32 pb-24">
+    <!-- Header -->
+    <div class="mb-16">
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 text-sm font-mono text-slate-600 hover:text-cyan-400 transition-colors mb-10"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="m15 18-6-6 6-6"></path>
+        </svg>
+        Home
+      </a>
+      <p class="font-mono text-cyan-400 text-sm mb-2">01.</p>
+      <h1 class="text-4xl font-bold text-slate-100">Writing</h1>
+      <p class="text-slate-500 mt-4 leading-relaxed max-w-lg">
+        Thoughts on backend architecture, generative AI, and software engineering craft.
+      </p>
+    </div>
+
+    <!-- Post list -->
+    {
+      posts.length === 0 ? (
+        <p class="text-center font-mono text-slate-600 py-20">No posts yet. Check back soon.</p>
+      ) : (
+        <div class="divide-y divide-slate-800">
+          {posts.map((post) => {
+            const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            });
+            return (
+              <a
+                href={`/blog/${post.slug}`}
+                class="group flex flex-col sm:flex-row sm:items-start justify-between gap-4 py-7 hover:border-cyan-500/20 transition-colors"
+              >
+                <div class="flex-1">
+                  <h2 class="text-slate-200 font-semibold text-lg group-hover:text-cyan-400 transition-colors duration-150 mb-2">
+                    {post.data.title}
+                  </h2>
+                  <p class="text-slate-500 text-sm leading-relaxed mb-3">
+                    {post.data.description}
+                  </p>
+                  <div class="flex flex-wrap gap-1.5">
+                    {post.data.tags.map((tag) => (
+                      <span class="tag">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+                <time
+                  class="font-mono text-xs text-slate-600 whitespace-nowrap sm:pt-1.5"
+                  datetime={post.data.pubDate.toISOString()}
+                >
+                  {formattedDate}
+                </time>
+              </a>
+            );
+          })}
+        </div>
+      )
+    }
+  </div>
+  <Footer />
+</BaseLayout>

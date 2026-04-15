@@ -1,0 +1,89 @@
+---
+const experiences = [
+  {
+    role: 'Backend Developer Intern',
+    company: 'Mudraksh & McShaw Tech LLP',
+    period: 'Mar 2025 – Jul 2025',
+    bullets: [
+      'Improved the WorkSage backend with task tagging, analytics dashboards, and employee tracking features.',
+      'Built Trade Compass — a P&L calculation engine using Flask, Pandas, and the TrueData.in real-time market API.',
+      'Accelerated MVP development cycles by integrating Agentic AI tooling into the engineering workflow.',
+    ],
+  },
+  {
+    role: 'Summer Intern',
+    company: 'IBM (SkillsBuild × CSRBOX)',
+    period: 'Jul 2024 – Aug 2024',
+    bullets: [
+      'Collaborated with IBM SkillsBuild and CSRBOX on AI/ML application development projects.',
+      'Applied industry-standard methodologies and tools within a structured, enterprise-level internship program.',
+    ],
+  },
+  {
+    role: 'Backend Development Consultant & Business Adviser',
+    company: 'Repairo Tech',
+    period: 'Sep 2022 – Dec 2024',
+    bullets: [
+      'Ported the entire Laravel PHP backend to a Python Django architecture, significantly improving maintainability.',
+      'Resolved critical backend bugs and advised on core service design decisions.',
+      'Provided strategic guidance on product direction and business development.',
+    ],
+  },
+  {
+    role: 'Open Source Contributor',
+    company: 'Social Summer of Code (Script Foundation)',
+    period: 'Jun 2024 – Aug 2024',
+    bullets: [
+      'Contributed to multiple open-source projects through the Social Summer of Code programme.',
+      'Practiced version control, collaborative code review, and software engineering best practices at scale.',
+    ],
+  },
+];
+---
+
+<section id="experience" class="py-24 px-6 bg-slate-900/20">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-16">
+      <div>
+        <span class="section-number">02.</span>
+        <h2 class="section-heading">Experience</h2>
+      </div>
+      <div class="hidden sm:block flex-1 h-px bg-slate-800 ml-4 max-w-xs"></div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <div class="absolute left-0 top-2 bottom-4 w-px bg-slate-800 hidden sm:block"></div>
+
+      <div class="space-y-8">
+        {
+          experiences.map((exp) => (
+            <div class="sm:pl-12 relative">
+              <!-- Timeline dot -->
+              <div class="absolute left-0 top-2 -translate-x-[5px] w-2.5 h-2.5 bg-cyan-400 rounded-full border-2 border-slate-950 hidden sm:block" />
+
+              <div class="card card-hover p-6 rounded-xl">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                  <div>
+                    <h3 class="text-slate-100 font-semibold text-lg leading-snug">{exp.role}</h3>
+                    <p class="text-cyan-400 text-sm font-mono mt-1">{exp.company}</p>
+                  </div>
+                  <span class="font-mono text-xs text-slate-600 whitespace-nowrap sm:pt-1">{exp.period}</span>
+                </div>
+                <ul class="space-y-2.5">
+                  {exp.bullets.map((bullet) => (
+                    <li class="flex gap-3 text-slate-400 text-sm leading-relaxed">
+                      <span class="text-cyan-500 mt-0.5 flex-shrink-0 text-xs">▸</span>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

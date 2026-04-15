@@ -1,0 +1,67 @@
+---
+const categories = [
+  {
+    name: 'Languages',
+    icon: '{ }',
+    skills: ['Python', 'Golang', 'Java', 'C/C++', 'JavaScript', 'Shell / Bash'],
+  },
+  {
+    name: 'Frameworks',
+    icon: '⚙',
+    skills: ['Django', 'Flask', 'FastAPI', 'Django REST Framework', 'Celery'],
+  },
+  {
+    name: 'Machine Learning',
+    icon: '⬡',
+    skills: ['TensorFlow', 'PyTorch', 'scikit-learn', 'Hugging Face', 'FastAI', 'NumPy', 'Pandas'],
+  },
+  {
+    name: 'Databases',
+    icon: '◫',
+    skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'SQLite', 'Redis', 'MariaDB'],
+  },
+  {
+    name: 'DevOps & Infra',
+    icon: '▲',
+    skills: ['Docker', 'Linux', 'Git', 'GitHub Actions', 'SSH', 'Vim / Neovim', 'Nginx'],
+  },
+  {
+    name: 'Focus Areas',
+    icon: '◈',
+    skills: ['Backend Development', 'Generative AI', 'Cyber Security', 'System Administration', 'DevOps'],
+  },
+];
+---
+
+<section id="skills" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-16">
+      <div>
+        <span class="section-number">03.</span>
+        <h2 class="section-heading">Skills</h2>
+      </div>
+      <div class="hidden sm:block flex-1 h-px bg-slate-800 ml-4 max-w-xs"></div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {
+        categories.map((cat) => (
+          <div class="card card-hover p-6 rounded-xl">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="font-mono text-cyan-400/60 text-base" aria-hidden="true">{cat.icon}</span>
+              <h3 class="text-slate-200 font-semibold text-sm uppercase tracking-wider font-mono">
+                {cat.name}
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              {cat.skills.map((skill) => (
+                <span class="tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

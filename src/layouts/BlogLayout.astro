@@ -1,0 +1,72 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, tags } = post.data;
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${title} — Ujjawal Saini`} description={description}>
+  <article class="max-w-3xl mx-auto px-6 pt-32 pb-24">
+    <a
+      href="/blog"
+      class="inline-flex items-center gap-2 text-sm font-mono text-slate-500 hover:text-cyan-400 transition-colors mb-12"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="m15 18-6-6 6-6"></path>
+      </svg>
+       Back to Writing
+    </a>
+
+    <header class="mb-12">
+      <div class="flex flex-wrap gap-2 mb-5">
+        {tags.map((tag) => <span class="tag">{tag}</span>)}
+      </div>
+      <h1 class="text-4xl font-bold text-slate-100 leading-tight mb-4">{title}</h1>
+      <p class="text-slate-400 text-lg leading-relaxed mb-5">{description}</p>
+      <time
+        class="font-mono text-sm text-slate-600"
+        datetime={pubDate.toISOString()}
+      >
+        {formattedDate}
+      </time>
+    </header>
+
+    <div
+      class="prose prose-invert prose-slate max-w-none
+        prose-headings:text-slate-100 prose-headings:font-bold
+        prose-p:text-slate-400 prose-p:leading-relaxed
+        prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:text-cyan-300
+        prose-code:text-cyan-300 prose-code:bg-slate-800/80 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
+        prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-800 prose-pre:rounded-xl
+        prose-blockquote:border-l-cyan-500 prose-blockquote:text-slate-400
+        prose-strong:text-slate-200
+        prose-hr:border-slate-800
+        prose-table:text-slate-300
+        prose-th:text-slate-200 prose-th:border-slate-700
+        prose-td:border-slate-800
+        prose-li:text-slate-400"
+    >
+      <slot />
+    </div>
+  </article>
+  <Footer />
+</BaseLayout>
