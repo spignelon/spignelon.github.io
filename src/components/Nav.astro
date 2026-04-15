@@ -1,124 +1,160 @@
 ---
 ---
 
-<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <!-- Logo -->
-    <a
-      href="/"
-      class="font-mono text-cyan-400 font-semibold text-lg hover:text-cyan-300 transition-colors"
-    >
-      ujjawal<span class="text-slate-600">.</span>dev
+<!--
+  DESKTOP: Fixed left sidebar 208px wide (lg:pl-52 on body content)
+  MOBILE:  Sticky top bar + full-screen slide-in drawer
+-->
+
+<!-- ═══════════════════════ DESKTOP SIDEBAR ═══════════════════════ -->
+<aside
+  class="hidden lg:flex flex-col fixed inset-y-0 left-0 w-52 z-40
+         bg-zinc-950 border-r border-zinc-800/60"
+>
+  <!-- Identity -->
+  <div class="px-5 pt-8 pb-6 border-b border-zinc-800/40">
+    <a href="/" class="block group">
+      <p class="text-zinc-100 font-semibold text-sm leading-tight group-hover:text-violet-300 transition-colors">
+        Ujjawal Saini
+      </p>
+      <p class="text-zinc-700 text-xs font-mono mt-0.5">Associate Engineer</p>
     </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
-      <a href="/#about" class="nav-link">About</a>
-      <a href="/#experience" class="nav-link">Experience</a>
-      <a href="/#projects" class="nav-link">Projects</a>
-      <a href="/blog" class="nav-link">Blog</a>
-      <a href="/#contact" class="nav-link">Contact</a>
-      <a
-        href="/resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-4 py-1.5 text-sm font-mono border border-cyan-500/40 text-cyan-400 rounded-md hover:bg-cyan-500/10 transition-colors"
-      >
-        Resume ↗
-      </a>
-    </nav>
+    <!-- Availability pill -->
+    <div class="flex items-center gap-1.5 mt-4">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse flex-shrink-0"></span>
+      <span class="text-[10px] font-mono text-zinc-600">open to work</span>
+    </div>
+  </div>
 
-    <!-- Mobile hamburger -->
-    <button
-      id="menu-toggle"
-      class="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8 p-1"
-      aria-label="Toggle menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
+  <!-- Navigation links -->
+  <nav class="flex-1 px-3 py-5 space-y-0.5" aria-label="Sidebar navigation">
+    <a href="#intro"      class="sidebar-link">Overview</a>
+    <a href="#about"      class="sidebar-link">About</a>
+    <a href="#experience" class="sidebar-link">Experience</a>
+    <a href="#projects"   class="sidebar-link">Projects</a>
+    <a href="#skills"     class="sidebar-link">Skills</a>
+    <a href="#achievements" class="sidebar-link">Awards</a>
+    <a href="#contact"    class="sidebar-link">Contact</a>
+    <div class="my-3 border-t border-zinc-800/50"></div>
+    <a href="/blog"       class="sidebar-link">Writing</a>
+  </nav>
+
+  <!-- Bottom: Resume + socials -->
+  <div class="px-5 py-5 border-t border-zinc-800/40">
+    <a
+      href="/resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="block text-[11px] font-mono text-violet-400 hover:text-violet-300 transition-colors mb-4"
     >
-      <span class="menu-bar block w-full h-0.5 bg-slate-400 transition-all duration-200 origin-center"></span>
-      <span class="menu-bar block w-full h-0.5 bg-slate-400 transition-all duration-200"></span>
-      <span class="menu-bar block w-full h-0.5 bg-slate-400 transition-all duration-200 origin-center"></span>
-    </button>
-  </div>
+      Resume ↗
+    </a>
 
-  <!-- Mobile dropdown -->
-  <div
-    id="mobile-menu"
-    class="hidden md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-md"
-    role="navigation"
-    aria-label="Mobile navigation"
-  >
-    <nav class="max-w-6xl mx-auto px-6 py-6 flex flex-col gap-5">
-      <a href="/#about" class="mobile-nav-link">About</a>
-      <a href="/#experience" class="mobile-nav-link">Experience</a>
-      <a href="/#projects" class="mobile-nav-link">Projects</a>
-      <a href="/blog" class="mobile-nav-link">Blog</a>
-      <a href="/#contact" class="mobile-nav-link">Contact</a>
-      <a
-        href="/resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="w-fit px-4 py-2 text-sm font-mono border border-cyan-500/40 text-cyan-400 rounded-md hover:bg-cyan-500/10 transition-colors"
-      >
-        Resume ↗
+    <div class="flex items-center gap-3">
+      <!-- GitHub -->
+      <a href="https://github.com/spignelon" target="_blank" rel="noopener noreferrer"
+         class="text-zinc-700 hover:text-zinc-300 transition-colors" aria-label="GitHub">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
       </a>
-    </nav>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/spignelon" target="_blank" rel="noopener noreferrer"
+         class="text-zinc-700 hover:text-zinc-300 transition-colors" aria-label="LinkedIn">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+      <!-- Email -->
+      <a href="mailto:ujjawalsaini47@gmail.com"
+         class="text-zinc-700 hover:text-zinc-300 transition-colors" aria-label="Email">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+      </a>
+      <!-- Twitter -->
+      <a href="https://twitter.com/spignelon" target="_blank" rel="noopener noreferrer"
+         class="text-zinc-700 hover:text-zinc-300 transition-colors" aria-label="Twitter">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+    </div>
   </div>
-</header>
+</aside>
+
+
+<!-- ═══════════════════════ MOBILE TOP BAR ═══════════════════════ -->
+<div class="lg:hidden fixed top-0 inset-x-0 z-50 h-14 flex items-center justify-between px-5
+            bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/60">
+  <a href="/" class="text-zinc-100 font-semibold text-sm font-mono">Ujjawal Saini</a>
+
+  <button
+    id="mob-toggle"
+    aria-label="Toggle menu"
+    aria-expanded="false"
+    class="flex flex-col gap-[5px] p-1.5"
+  >
+    <span class="mob-bar w-5 h-px bg-zinc-400 transition-all duration-200 origin-center"></span>
+    <span class="mob-bar w-5 h-px bg-zinc-400 transition-all duration-200"></span>
+    <span class="mob-bar w-5 h-px bg-zinc-400 transition-all duration-200 origin-center"></span>
+  </button>
+</div>
+
+<!-- Mobile full-screen drawer -->
+<div
+  id="mob-menu"
+  class="hidden lg:hidden fixed inset-0 z-40 bg-zinc-950 pt-14 flex flex-col"
+>
+  <nav class="flex-1 flex flex-col justify-center px-8 space-y-1">
+    <a href="#intro"        class="mob-link">Overview</a>
+    <a href="#about"        class="mob-link">About</a>
+    <a href="#experience"   class="mob-link">Experience</a>
+    <a href="#projects"     class="mob-link">Projects</a>
+    <a href="#skills"       class="mob-link">Skills</a>
+    <a href="#achievements" class="mob-link">Awards</a>
+    <a href="#contact"      class="mob-link">Contact</a>
+    <a href="/blog"         class="mob-link">Writing</a>
+  </nav>
+  <div class="px-8 py-8 border-t border-zinc-800/40">
+    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+       class="text-sm font-mono text-violet-400">Resume ↗</a>
+  </div>
+</div>
 
 <style>
-  .nav-link {
-    @apply text-sm font-mono text-slate-400 hover:text-slate-100 transition-colors duration-150;
-  }
-  .mobile-nav-link {
-    @apply font-mono text-xl text-slate-300 hover:text-cyan-400 transition-colors duration-150;
-  }
-  #nav.scrolled {
-    @apply bg-slate-950/90 backdrop-blur-md border-b border-slate-800/60;
+  .mob-link {
+    @apply text-2xl font-semibold text-zinc-500 hover:text-zinc-100 transition-colors py-2;
   }
 </style>
 
 <script>
-  const nav = document.getElementById('nav');
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('mobile-menu');
-  const bars = document.querySelectorAll<HTMLElement>('.menu-bar');
+  const toggle = document.getElementById('mob-toggle')!;
+  const menu   = document.getElementById('mob-menu')!;
+  const bars   = document.querySelectorAll<HTMLElement>('.mob-bar');
+  let open = false;
 
-  // Scroll-based nav styling
-  const handleScroll = () => {
-    nav?.classList.toggle('scrolled', window.scrollY > 24);
-  };
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+  toggle.addEventListener('click', () => {
+    open = !open;
+    menu.classList.toggle('hidden', !open);
+    toggle.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
 
-  // Hamburger toggle
-  let isOpen = false;
-  toggle?.addEventListener('click', () => {
-    isOpen = !isOpen;
-    menu?.classList.toggle('hidden', !isOpen);
-    toggle.setAttribute('aria-expanded', String(isOpen));
-
-    if (isOpen) {
-      bars[0]?.classList.add('rotate-45', 'translate-y-2');
-      bars[1]?.classList.add('opacity-0', 'scale-x-0');
-      bars[2]?.classList.add('-rotate-45', '-translate-y-2');
-    } else {
-      bars[0]?.classList.remove('rotate-45', 'translate-y-2');
-      bars[1]?.classList.remove('opacity-0', 'scale-x-0');
-      bars[2]?.classList.remove('-rotate-45', '-translate-y-2');
-    }
+    bars[0].style.transform = open ? 'rotate(45deg) translateY(6px)'  : '';
+    bars[1].style.opacity   = open ? '0' : '1';
+    bars[2].style.transform = open ? 'rotate(-45deg) translateY(-6px)' : '';
   });
 
-  // Close on link click
-  menu?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      isOpen = false;
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      open = false;
       menu.classList.add('hidden');
-      toggle?.setAttribute('aria-expanded', 'false');
-      bars[0]?.classList.remove('rotate-45', 'translate-y-2');
-      bars[1]?.classList.remove('opacity-0', 'scale-x-0');
-      bars[2]?.classList.remove('-rotate-45', '-translate-y-2');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      bars[0].style.transform = bars[1].style.opacity = bars[2].style.transform = '';
+      bars[1].style.opacity = '1';
     });
   });
 </script>

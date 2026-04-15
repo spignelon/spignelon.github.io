@@ -1,205 +1,160 @@
 ---
-const projects = [
+// Featured: shown as horizontal editorial strips with image
+const featured = [
   {
+    num: '01',
     title: 'NearBy',
     description:
-      'A hyper-local, anonymous, interest-based PWA chat application. Users connect with people nearby who share their interests — no accounts, no profiles, just authentic conversation driven by real-time WebSocket communication and location-based interest matching.',
+      'A hyper-local, anonymous, interest-based PWA chat app. No accounts, no profiles — users connect with people nearby who share their interests via real-time WebSocket communication and PostGIS location matching.',
     image: null,
-    gradient: 'from-purple-600/20 via-cyan-500/10 to-blue-600/20',
-    tags: ['Django', 'Django Channels', 'React', 'PWA', 'PostGIS', 'Redis', 'WebSockets'],
+    tags: ['Django', 'Django Channels', 'React', 'PWA', 'PostGIS', 'Redis'],
     github: 'https://github.com/spignelon',
     award: null,
     featured: true,
   },
   {
+    num: '02',
     title: 'Social2Amazon',
     description:
-      'AI-powered tool that converts social media content — Instagram Reels, TikTok videos, Facebook posts — into structured Amazon product listings using LLMs. Achieved 1st Runner-Up at Amazon Sambhav Hackathon 2024.',
+      'AI pipeline that scrapes Instagram, TikTok, and Facebook content and converts it into structured Amazon product listings using LLMs. Auto-publishes to Amazon via SP-API with a management dashboard.',
     image: '/images/social2amazon.png',
-    gradient: null,
-    tags: ['Django', 'React.js', 'LLMs', 'BeautifulSoup', 'Selenium', 'Amazon SP API'],
+    tags: ['Django', 'React.js', 'LLMs', 'BeautifulSoup', 'Selenium', 'Amazon SP-API'],
     github: 'https://github.com/spignelon',
     award: '🏆 1st Runner-Up — Amazon Sambhav Hackathon 2024',
-    featured: false,
   },
   {
-    title: 'WaitBin',
-    description:
-      'A time-locked pastebin where content stays hidden until a specific date and time. Features live countdown timers, shareable links with optional edit codes, and a personal dashboard for managing all your WaitBins.',
-    image: '/images/WaitBin.png',
-    gradient: null,
-    tags: ['Flask', 'MongoDB', 'Python', 'Tailwind CSS', 'JavaScript'],
-    github: 'https://github.com/spignelon',
-    award: null,
-    featured: false,
-  },
-  {
-    title: 'NoLlama',
-    description:
-      'A lightweight terminal-based chat client for Google\'s Gemini models (2.0 Flash, 2.5 Pro). Supports multi-turn conversations with streaming, on-the-fly model switching, and colorful markdown rendering — all under low memory usage.',
-    image: '/images/NoLlama.png',
-    gradient: null,
-    tags: ['Python', 'Gemini API', 'LLMs', 'Terminal UI', 'Streaming'],
-    github: 'https://github.com/spignelon',
-    award: null,
-    featured: false,
-  },
-  {
-    title: 'Facemap',
-    description:
-      'High-accuracy face recognition photo sharing platform with a 99.2% accuracy rate. Custom Python modules handle image filtering and metadata stripping. Built with FaceNet for recognition and Google OAuth for auth.',
-    image: '/images/facemap.png',
-    gradient: null,
-    tags: ['Django', 'FaceNet', 'PostgreSQL', 'Bootstrap', 'Google OAuth', 'Python'],
-    github: 'https://github.com/spignelon',
-    award: '🥈 2nd Prize — HackEDCode 2.0 Hackathon',
-    featured: false,
-  },
-  {
+    num: '03',
     title: 'TorBreaker',
     description:
-      'Cybersecurity platform for detecting misconfigured Tor onion sites. Features 15+ custom Python modules for misconfiguration scanning, automated URL crawling, and AI-driven legality classification of site content.',
+      '15+ custom Python modules for detecting misconfigured Tor onion sites: automated URL crawling, misconfiguration scanning, and AI-driven legality classification. Built at Smart India Hackathon 2024.',
     image: '/images/torBreaker.png',
-    gradient: null,
-    tags: ['Django', 'Celery', 'Redis', 'MongoDB', 'Python', 'Cybersecurity'],
+    tags: ['Django', 'Celery', 'Redis', 'MongoDB', 'Cybersecurity'],
     github: 'https://github.com/spignelon',
-    award: '🛡 Built at Smart India Hackathon 2024',
-    featured: false,
+    award: '🛡 Smart India Hackathon 2024',
   },
 ];
 
-const otherProjects = [
+// Other: compact table rows
+const others = [
   {
-    title: 'ML-Powered Text Analyzer',
-    description: 'NLP pipeline for multi-class text classification and sentiment analysis, exposed via a Flask REST API.',
-    tags: ['Python', 'NLP', 'TensorFlow', 'Flask'],
+    title: 'WaitBin',
+    description: 'Time-locked pastebin — content stays hidden until a specific date. Live countdown, shareable links.',
+    tags: ['Flask', 'MongoDB', 'Tailwind'],
+    image: '/images/WaitBin.png',
+  },
+  {
+    title: 'NoLlama',
+    description: 'Terminal chat client for Gemini 2.0 Flash / 2.5 Pro. Streaming, model switching, markdown rendering.',
+    tags: ['Python', 'Gemini API', 'Terminal UI'],
+    image: '/images/NoLlama.png',
+  },
+  {
+    title: 'Facemap',
+    description: '99.2% accuracy face-recognition photo sharing platform. Custom metadata stripping modules.',
+    tags: ['Django', 'FaceNet', 'PostgreSQL'],
+    image: '/images/facemap.png',
+    award: '🥈 HackEDCode 2.0',
+  },
+  {
+    title: 'ML Text Analyzer',
+    description: 'NLP pipeline for multi-class classification and sentiment analysis with a Flask API layer.',
+    tags: ['Python', 'TensorFlow', 'Flask'],
+    image: null,
   },
   {
     title: 'Secure API Gateway',
-    description: 'Lightweight API gateway with JWT authentication, per-client rate limiting, and transparent request proxying.',
-    tags: ['Golang', 'JWT', 'Redis', 'Docker'],
-  },
-  {
-    title: 'Linux System Monitor',
-    description: 'Real-time system resource monitor with historical tracking stored in SQLite and a web dashboard.',
-    tags: ['Python', 'Bash', 'SQLite', 'Chart.js'],
+    description: 'JWT auth, per-client rate limiting, and transparent proxying in a single Golang binary.',
+    tags: ['Golang', 'Redis', 'Docker'],
+    image: null,
   },
 ];
 ---
 
-<section id="projects" class="py-24 px-6 bg-slate-900/20">
-  <div class="max-w-6xl mx-auto">
-    <!-- Section header -->
-    <div class="flex items-center gap-4 mb-16">
-      <div>
-        <span class="section-number">04.</span>
-        <h2 class="section-heading">Projects</h2>
+<section id="projects" class="px-6 lg:px-12 py-16 border-t border-zinc-800/50">
+  <p class="section-label">Projects</p>
+
+  <!-- ── FEATURED: horizontal editorial strips ── -->
+  <div class="max-w-5xl space-y-0 divide-y divide-zinc-800/40 mb-16">
+    {featured.map((p) => (
+      <div class="group grid md:grid-cols-[auto_1fr] gap-0 py-8 first:pt-0">
+
+        <!-- Image / placeholder column -->
+        <div class="hidden md:block w-56 h-36 overflow-hidden mr-8 flex-shrink-0 border border-zinc-800/60 bg-zinc-900">
+          {p.image ? (
+            <img
+              src={p.image}
+              alt={p.title}
+              class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-violet-950/40 to-zinc-900">
+              <span class="text-3xl font-bold font-mono text-zinc-800 select-none">{p.num}</span>
+            </div>
+          )}
+        </div>
+
+        <!-- Content column -->
+        <div>
+          <div class="flex items-baseline gap-3 mb-2">
+            <span class="font-mono text-[11px] text-zinc-700">{p.num}</span>
+            <h3 class="text-zinc-100 font-semibold text-base group-hover:text-violet-300 transition-colors">
+              {p.title}
+            </h3>
+            {p.featured && (
+              <span class="text-[10px] font-mono text-violet-600 border border-violet-800/50 px-1.5 py-0.5">
+                featured
+              </span>
+            )}
+          </div>
+
+          {p.award && (
+            <p class="text-[11px] font-mono text-amber-500/70 mb-2">{p.award}</p>
+          )}
+
+          <p class="text-zinc-500 text-sm leading-relaxed mb-3 max-w-lg">{p.description}</p>
+
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            {p.tags.map((t) => <span class="chip">{t}</span>)}
+          </div>
+
+          <a
+            href={p.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[11px] font-mono text-zinc-700 hover:text-violet-400 transition-colors"
+          >
+            github.com/spignelon ↗
+          </a>
+        </div>
       </div>
-      <div class="hidden sm:block flex-1 h-px bg-slate-800 ml-4 max-w-xs"></div>
-    </div>
+    ))}
+  </div>
 
-    <!-- Main project grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-      {
-        projects.map((project) => (
-          <div class="card card-hover rounded-xl overflow-hidden flex flex-col group">
-            <!-- Thumbnail -->
-            <div class="relative h-44 overflow-hidden bg-slate-800 flex-shrink-0">
-              {project.image ? (
-                <img
-                  src={project.image}
-                  alt={project.title + ' screenshot'}
-                  class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : (
-                <div
-                  class={`w-full h-full bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
-                >
-                  <span class="text-5xl font-bold text-slate-700/50 font-mono select-none">
-                    {project.title[0]}
-                  </span>
-                </div>
-              )}
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
-              {project.featured && (
-                <span class="absolute top-3 right-3 px-2 py-0.5 text-xs font-mono bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded backdrop-blur-sm">
-                  Featured
-                </span>
+  <!-- ── OTHERS: compact table ── -->
+  <div class="max-w-5xl">
+    <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-800 mb-4">More Projects</p>
+
+    <div class="divide-y divide-zinc-800/30">
+      {others.map((p) => (
+        <div class="group py-4 grid sm:grid-cols-[1fr_auto] gap-4 items-start">
+          <div>
+            <div class="flex items-center gap-3 mb-1">
+              <h4 class="text-zinc-300 text-sm font-medium group-hover:text-violet-300 transition-colors">
+                {p.title}
+              </h4>
+              {p.award && (
+                <span class="text-[10px] font-mono text-amber-600/70">{p.award}</span>
               )}
             </div>
-
-            <!-- Content -->
-            <div class="p-5 flex flex-col flex-1">
-              {project.award && (
-                <p class="text-xs font-mono text-amber-400/80 mb-2">{project.award}</p>
-              )}
-              <h3 class="text-slate-100 font-semibold text-lg mb-2 group-hover:text-cyan-400 transition-colors duration-150">
-                {project.title}
-              </h3>
-              <p class="text-slate-500 text-sm leading-relaxed mb-4 flex-1">
-                {project.description}
-              </p>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                {project.tags.map((tag) => (
-                  <span class="tag">{tag}</span>
-                ))}
-              </div>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 text-sm font-mono text-slate-600 hover:text-cyan-400 transition-colors duration-150 mt-auto"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-4 h-4"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                </svg>
-                View on GitHub
-              </a>
-            </div>
+            <p class="text-zinc-600 text-xs leading-relaxed">{p.description}</p>
           </div>
-        ))
-      }
-    </div>
-
-    <!-- Other projects -->
-    <p class="text-center font-mono text-xs text-slate-600 uppercase tracking-widest mb-6">
-      Other Noteworthy Projects
-    </p>
-    <div class="grid sm:grid-cols-3 gap-4">
-      {
-        otherProjects.map((project) => (
-          <div class="card card-hover p-5 rounded-xl">
-            <div class="mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-7 h-7 text-cyan-400/40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-              </svg>
-            </div>
-            <h4 class="text-slate-200 font-semibold mb-2">{project.title}</h4>
-            <p class="text-slate-500 text-sm leading-relaxed mb-4">{project.description}</p>
-            <div class="flex flex-wrap gap-1.5">
-              {project.tags.map((tag) => (
-                <span class="tag">{tag}</span>
-              ))}
-            </div>
+          <div class="flex flex-wrap gap-1 sm:justify-end">
+            {p.tags.map((t) => <span class="chip">{t}</span>)}
           </div>
-        ))
-      }
+        </div>
+      ))}
     </div>
   </div>
 </section>

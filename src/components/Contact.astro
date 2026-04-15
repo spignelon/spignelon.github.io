@@ -1,86 +1,55 @@
 ---
-const contactLinks = [
-  {
-    name: 'Email',
-    value: 'ujjawalsaini47@gmail.com',
-    href: 'mailto:ujjawalsaini47@gmail.com',
-  },
-  {
-    name: 'GitHub',
-    value: 'github.com/spignelon',
-    href: 'https://github.com/spignelon',
-  },
-  {
-    name: 'LinkedIn',
-    value: 'linkedin.com/in/spignelon',
-    href: 'https://www.linkedin.com/in/spignelon',
-  },
-  {
-    name: 'Telegram',
-    value: '@spignelon',
-    href: 'https://t.me/spignelon',
-  },
-  {
-    name: 'Twitter / X',
-    value: '@spignelon',
-    href: 'https://twitter.com/spignelon',
-  },
-  {
-    name: 'Blog',
-    value: 'ujjawalsaini.hashnode.dev',
-    href: 'https://ujjawalsaini.hashnode.dev/',
-  },
+const links = [
+  { label: 'Email',    value: 'ujjawalsaini47@gmail.com',       href: 'mailto:ujjawalsaini47@gmail.com' },
+  { label: 'GitHub',   value: 'github.com/spignelon',           href: 'https://github.com/spignelon' },
+  { label: 'LinkedIn', value: 'linkedin.com/in/spignelon',      href: 'https://www.linkedin.com/in/spignelon' },
+  { label: 'Telegram', value: '@spignelon',                     href: 'https://t.me/spignelon' },
+  { label: 'Twitter',  value: '@spignelon',                     href: 'https://twitter.com/spignelon' },
+  { label: 'Blog',     value: 'ujjawalsaini.hashnode.dev',       href: 'https://ujjawalsaini.hashnode.dev/' },
+  { label: 'Discord',  value: 'spignelon',                      href: '#' },
 ];
 ---
 
-<section id="contact" class="py-24 px-6 bg-slate-900/20">
-  <div class="max-w-2xl mx-auto text-center">
-    <span class="section-number">06.</span>
-    <h2 class="section-heading mb-6">Get In Touch</h2>
+<section id="contact" class="px-6 lg:px-12 py-16 border-t border-zinc-800/50">
+  <p class="section-label">Contact</p>
 
-    <p class="text-slate-400 text-lg leading-relaxed mb-10">
-      I'm open to new opportunities, collaborations, and interesting conversations.
-      Whether you have a project idea, a question, or just want to say hello —
-      my inbox is always open.
-    </p>
+  <div class="max-w-5xl grid lg:grid-cols-[2fr_1fr] gap-12">
 
-    <a
-      href="mailto:ujjawalsaini47@gmail.com"
-      class="inline-flex items-center gap-3 px-8 py-4 border border-cyan-500/40 text-cyan-400 font-mono rounded-lg hover:bg-cyan-500/10 transition-colors duration-150 text-base mb-16 group"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform duration-150"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+    <!-- Left: copy + primary CTA -->
+    <div>
+      <p class="text-zinc-400 text-sm leading-relaxed max-w-sm mb-8">
+        Open to new roles, freelance projects, and collaboration.
+        If you have something interesting in mind, reach out — I respond to everything.
+      </p>
+
+      <a
+        href="mailto:ujjawalsaini47@gmail.com"
+        class="inline-flex items-center gap-3 text-sm font-mono text-violet-400 border border-violet-800/50
+               px-5 py-3 hover:bg-violet-950/40 transition-colors duration-150"
       >
-        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-      </svg>
-      Say Hello
-    </a>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+        ujjawalsaini47@gmail.com
+      </a>
+    </div>
 
-    <!-- Contact grid -->
-    <div class="grid sm:grid-cols-3 gap-3 text-left">
-      {
-        contactLinks.map((link) => (
-          <a
-            href={link.href}
-            target={link.href.startsWith('mailto') ? undefined : '_blank'}
-            rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-            class="card card-hover p-4 rounded-xl group"
-          >
-            <p class="text-xs font-mono text-slate-600 uppercase tracking-widest mb-1.5">{link.name}</p>
-            <p class="text-slate-400 text-sm group-hover:text-cyan-400 transition-colors duration-150 truncate font-mono">
-              {link.value}
-            </p>
-          </a>
-        ))
-      }
+    <!-- Right: link list -->
+    <div class="divide-y divide-zinc-800/40">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          target={l.href.startsWith('mailto') || l.href === '#' ? undefined : '_blank'}
+          rel={l.href.startsWith('mailto') || l.href === '#' ? undefined : 'noopener noreferrer'}
+          class="group flex items-center justify-between py-3"
+        >
+          <span class="font-mono text-[11px] text-zinc-700 uppercase tracking-wider w-20">{l.label}</span>
+          <span class="text-zinc-500 text-xs font-mono group-hover:text-violet-400 transition-colors truncate max-w-[160px]">
+            {l.value}
+          </span>
+        </a>
+      ))}
     </div>
   </div>
 </section>

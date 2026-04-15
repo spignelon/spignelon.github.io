@@ -10,14 +10,14 @@ interface Props {
 
 const {
   title,
-  description = 'Ujjawal Saini — Associate Engineer specializing in Data Science, Backend Architecture, and Generative AI.',
+  description = 'Ujjawal Saini — Associate Engineer. Backend systems, generative AI, data science.',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,27 +25,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-
     <ViewTransitions />
   </head>
-  <body class="bg-slate-950 text-slate-300 antialiased font-sans">
+  <body class="bg-zinc-950 text-zinc-400 antialiased font-sans">
+    <!-- Fixed sidebar (desktop) + mobile top bar (both inside Nav) -->
     <Nav />
-    <main>
+
+    <!-- Content: offset by sidebar width on desktop, top-bar height on mobile -->
+    <div class="lg:pl-52">
       <slot />
-    </main>
+    </div>
   </body>
 </html>

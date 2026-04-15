@@ -8,50 +8,52 @@
   }
 
   ::selection {
-    background-color: rgb(34 211 238 / 0.15);
-    color: #67e8f9;
+    background-color: rgb(139 92 246 / 0.2);
+    color: #c4b5fd;
   }
 
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #020617;
+    background: #09090b;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #334155;
-    border-radius: 9999px;
+    background: #3f3f46;
+    border-radius: 2px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #22d3ee;
+    background: #8b5cf6;
   }
 }
 
 @layer components {
-  .section-number {
-    @apply font-mono text-sm text-cyan-400;
+  /* Section anatomy */
+  .section-label {
+    @apply text-[10px] font-mono uppercase tracking-[0.25em] text-zinc-600 mb-6;
   }
 
-  .section-heading {
-    @apply text-3xl font-bold text-slate-100 mt-1;
+  /* Tag pill */
+  .chip {
+    @apply px-2 py-0.5 text-[11px] font-mono text-zinc-500 border border-zinc-800 rounded-sm;
   }
 
-  .tag {
-    @apply px-2 py-0.5 text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded;
+  /* Sidebar nav link */
+  .sidebar-link {
+    @apply flex items-center gap-2.5 px-3 py-2 text-sm text-zinc-500 rounded-sm
+           hover:text-zinc-200 hover:bg-zinc-800/60 transition-colors duration-150 font-mono;
   }
 
-  .card {
-    @apply bg-slate-900 border border-slate-800 rounded-xl;
+  .sidebar-link.active {
+    @apply text-zinc-200 bg-zinc-800/60;
   }
 
-  .card-hover {
-    @apply transition-colors duration-200 hover:border-cyan-500/30;
-  }
-
-  .social-link {
-    @apply text-slate-500 hover:text-cyan-400 transition-colors duration-150;
+  /* Inline text link */
+  .text-link {
+    @apply text-zinc-400 underline underline-offset-4 decoration-zinc-700
+           hover:text-violet-300 hover:decoration-violet-500 transition-colors;
   }
 }

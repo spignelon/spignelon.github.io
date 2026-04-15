@@ -1,67 +1,30 @@
 ---
 const categories = [
-  {
-    name: 'Languages',
-    icon: '{ }',
-    skills: ['Python', 'Golang', 'Java', 'C/C++', 'JavaScript', 'Shell / Bash'],
-  },
-  {
-    name: 'Frameworks',
-    icon: '⚙',
-    skills: ['Django', 'Flask', 'FastAPI', 'Django REST Framework', 'Celery'],
-  },
-  {
-    name: 'Machine Learning',
-    icon: '⬡',
-    skills: ['TensorFlow', 'PyTorch', 'scikit-learn', 'Hugging Face', 'FastAI', 'NumPy', 'Pandas'],
-  },
-  {
-    name: 'Databases',
-    icon: '◫',
-    skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'SQLite', 'Redis', 'MariaDB'],
-  },
-  {
-    name: 'DevOps & Infra',
-    icon: '▲',
-    skills: ['Docker', 'Linux', 'Git', 'GitHub Actions', 'SSH', 'Vim / Neovim', 'Nginx'],
-  },
-  {
-    name: 'Focus Areas',
-    icon: '◈',
-    skills: ['Backend Development', 'Generative AI', 'Cyber Security', 'System Administration', 'DevOps'],
-  },
+  { name: 'Languages',    items: ['Python', 'Golang', 'Java', 'C/C++', 'JavaScript', 'Shell / Bash'] },
+  { name: 'Frameworks',  items: ['Django', 'Flask', 'FastAPI', 'Django REST Framework', 'Celery'] },
+  { name: 'ML / AI',     items: ['TensorFlow', 'PyTorch', 'scikit-learn', 'Hugging Face', 'FastAI', 'NumPy', 'Pandas'] },
+  { name: 'Databases',   items: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'SQLite', 'MariaDB'] },
+  { name: 'DevOps',      items: ['Docker', 'Linux', 'Git', 'GitHub Actions', 'Nginx', 'SSH', 'Vim'] },
+  { name: 'Focus Areas', items: ['Backend Architecture', 'Generative AI', 'Cyber Security', 'System Admin', 'DevOps'] },
 ];
 ---
 
-<section id="skills" class="py-24 px-6">
-  <div class="max-w-6xl mx-auto">
-    <!-- Section header -->
-    <div class="flex items-center gap-4 mb-16">
-      <div>
-        <span class="section-number">03.</span>
-        <h2 class="section-heading">Skills</h2>
-      </div>
-      <div class="hidden sm:block flex-1 h-px bg-slate-800 ml-4 max-w-xs"></div>
-    </div>
+<section id="skills" class="px-6 lg:px-12 py-16 border-t border-zinc-800/50">
+  <p class="section-label">Skills</p>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {
-        categories.map((cat) => (
-          <div class="card card-hover p-6 rounded-xl">
-            <div class="flex items-center gap-3 mb-5">
-              <span class="font-mono text-cyan-400/60 text-base" aria-hidden="true">{cat.icon}</span>
-              <h3 class="text-slate-200 font-semibold text-sm uppercase tracking-wider font-mono">
-                {cat.name}
-              </h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              {cat.skills.map((skill) => (
-                <span class="tag">{skill}</span>
-              ))}
-            </div>
-          </div>
-        ))
-      }
+  <div class="max-w-5xl">
+    <!-- Definition-list style — two column on desktop -->
+    <div class="divide-y divide-zinc-800/40">
+      {categories.map((cat) => (
+        <div class="py-4 grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-2 sm:gap-8 items-baseline">
+          <span class="font-mono text-[11px] text-zinc-700 uppercase tracking-wider pt-0.5 flex-shrink-0">
+            {cat.name}
+          </span>
+          <span class="text-zinc-500 text-sm leading-relaxed">
+            {cat.items.join(' · ')}
+          </span>
+        </div>
+      ))}
     </div>
   </div>
 </section>

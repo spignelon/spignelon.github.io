@@ -1,101 +1,71 @@
 ---
-const techs = [
-  'Python', 'Golang', 'Java', 'C/C++',
-  'Django', 'Flask', 'FastAPI', 'DRF',
-  'TensorFlow', 'PyTorch', 'Hugging Face',
-  'NumPy', 'Pandas', 'scikit-learn',
-  'PostgreSQL', 'MongoDB', 'Redis',
-  'Docker', 'Linux', 'Git', 'Celery',
-];
 ---
 
-<section id="about" class="py-24 px-6">
-  <div class="max-w-6xl mx-auto">
-    <!-- Section header -->
-    <div class="flex items-center gap-4 mb-16">
-      <div>
-        <span class="section-number">01.</span>
-        <h2 class="section-heading">About Me</h2>
-      </div>
-      <div class="hidden sm:block flex-1 h-px bg-slate-800 ml-4 max-w-xs"></div>
+<section id="about" class="px-6 lg:px-12 py-16 border-t border-zinc-800/50">
+  <p class="section-label">About</p>
+
+  <div class="grid lg:grid-cols-[2fr_1fr] gap-12 max-w-5xl">
+
+    <!-- Bio -->
+    <div class="space-y-4 text-zinc-400 text-sm leading-relaxed">
+      <p>
+        I'm Ujjawal — a B.Tech student in AI & Machine Learning at
+        <span class="text-zinc-300">Guru Gobind Singh Indraprastha University</span>,
+        graduating 2025. I build reliable backend infrastructure and intelligent
+        applications that turn messy data into working systems.
+      </p>
+      <p>
+        My work is shaped by <span class="text-zinc-300">precision and follow-through</span>.
+        I've won multiple national hackathons —
+        <span class="text-violet-400">Amazon Sambhav 2024</span> (1st Runner-Up) and
+        <span class="text-violet-400">Intel GenAI Hackathon at IIT Delhi</span> (1st Rank) —
+        shipping production-ready code under competitive pressure.
+      </p>
+      <p>
+        Professionally, I've worked as a Backend Developer Intern at
+        <span class="text-zinc-300">Mudraksh & McShaw Tech LLP</span>,
+        interned at <span class="text-zinc-300">IBM SkillsBuild</span>,
+        and served as Backend Consultant at <span class="text-zinc-300">Repairo Tech</span>
+        — where I ported an entire Laravel codebase to Python Django.
+      </p>
+      <p>
+        Outside of work: LeetCode (rating
+        <span class="text-violet-400 font-mono">1753</span>, top 9.67%),
+        open-source contributions, and Stoic philosophy.
+      </p>
     </div>
 
-    <div class="grid lg:grid-cols-5 gap-16">
-      <!-- Bio column -->
-      <div class="lg:col-span-3 space-y-5 text-slate-400 leading-relaxed">
-        <p>
-          I'm Ujjawal — a B.Tech student in AI & Machine Learning at
-          <span class="text-slate-200">Guru Gobind Singh Indraprastha University</span>,
-          graduating 2025. I specialize in building robust backend systems and intelligent
-          applications that bridge raw data and real-world utility.
-        </p>
-        <p>
-          My engineering approach is shaped by <span class="text-slate-200">discipline and precision</span>.
-          I've won multiple national hackathons — including
-          <span class="text-cyan-400">Amazon Sambhav Hackathon</span> (1st Runner-Up) and
-          <span class="text-cyan-400">Intel GenAI Hackathon at IIT Delhi</span> (1st Rank) —
-          building production-level systems under competitive constraints.
-        </p>
-        <p>
-          I've worked as a <span class="text-slate-200">Backend Developer Intern</span> at Mudraksh
-          & McShaw Tech LLP, contributed to open source via Social Summer of Code, and interned at
-          <span class="text-slate-200">IBM SkillsBuild</span>. My work spans Django REST APIs,
-          GenAI pipelines, Docker-based infrastructure, and cybersecurity tooling.
-        </p>
-        <p>
-          When I'm not building, I'm sharpening algorithmic thinking on LeetCode
-          (rating: <span class="text-cyan-400 font-semibold">1753, Top 9.67%</span>),
-          reading Stoic philosophy, or contributing to open-source projects.
-        </p>
+    <!-- Stats + Education -->
+    <div class="space-y-6">
 
-        <!-- Education -->
-        <div class="mt-8 p-5 card rounded-xl">
-          <p class="text-xs font-mono text-slate-600 uppercase tracking-widest mb-3">Education</p>
-          <p class="text-slate-100 font-semibold">B.Tech — Artificial Intelligence & Machine Learning</p>
-          <p class="text-slate-400 text-sm mt-1">Guru Gobind Singh Indraprastha University</p>
-          <div class="flex items-center justify-between mt-4 pt-4 border-t border-slate-800 text-sm">
-            <span class="font-mono text-slate-500">Aug 2021 – Jul 2025</span>
-            <span class="tag">CGPA: 7.9</span>
-          </div>
+      <!-- Quick stats — minimal grid -->
+      <div class="grid grid-cols-2 gap-px bg-zinc-800/50 border border-zinc-800/50">
+        <div class="bg-zinc-950 p-4">
+          <p class="text-2xl font-bold text-zinc-100 font-mono">7+</p>
+          <p class="text-[11px] text-zinc-600 mt-0.5 uppercase tracking-wider">Hackathons</p>
+        </div>
+        <div class="bg-zinc-950 p-4">
+          <p class="text-2xl font-bold text-zinc-100 font-mono">1753</p>
+          <p class="text-[11px] text-zinc-600 mt-0.5 uppercase tracking-wider">LeetCode</p>
+        </div>
+        <div class="bg-zinc-950 p-4">
+          <p class="text-2xl font-bold text-zinc-100 font-mono">Top 10%</p>
+          <p class="text-[11px] text-zinc-600 mt-0.5 uppercase tracking-wider">DevRank</p>
+        </div>
+        <div class="bg-zinc-950 p-4">
+          <p class="text-2xl font-bold text-zinc-100 font-mono">4y</p>
+          <p class="text-[11px] text-zinc-600 mt-0.5 uppercase tracking-wider">Experience</p>
         </div>
       </div>
 
-      <!-- Tech + stats column -->
-      <div class="lg:col-span-2">
-        <p class="text-xs font-mono text-slate-600 uppercase tracking-widest mb-5">
-          Technologies
-        </p>
-        <div class="flex flex-wrap gap-2 mb-10">
-          {
-            techs.map((tech) => (
-              <span class="px-3 py-1.5 text-sm font-mono text-slate-400 bg-slate-900 border border-slate-800 rounded-md hover:border-cyan-500/30 hover:text-cyan-400 transition-colors duration-150 cursor-default">
-                {tech}
-              </span>
-            ))
-          }
-        </div>
-
-        <!-- Quick stats -->
-        <p class="text-xs font-mono text-slate-600 uppercase tracking-widest mb-4">
-          Quick Stats
-        </p>
-        <div class="grid grid-cols-2 gap-3">
-          <div class="card card-hover p-4 rounded-xl">
-            <p class="text-2xl font-bold text-cyan-400 font-mono">7+</p>
-            <p class="text-xs text-slate-500 mt-1">Hackathons Won</p>
-          </div>
-          <div class="card card-hover p-4 rounded-xl">
-            <p class="text-2xl font-bold text-cyan-400 font-mono">1753</p>
-            <p class="text-xs text-slate-500 mt-1">LeetCode Rating</p>
-          </div>
-          <div class="card card-hover p-4 rounded-xl">
-            <p class="text-2xl font-bold text-cyan-400 font-mono">Top 10%</p>
-            <p class="text-xs text-slate-500 mt-1">Quine DevRank</p>
-          </div>
-          <div class="card card-hover p-4 rounded-xl">
-            <p class="text-2xl font-bold text-cyan-400 font-mono">4+</p>
-            <p class="text-xs text-slate-500 mt-1">Years of Code</p>
-          </div>
+      <!-- Education -->
+      <div class="border border-zinc-800/60 p-4">
+        <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-700 mb-3">Education</p>
+        <p class="text-zinc-200 font-medium text-sm">B.Tech — AI & Machine Learning</p>
+        <p class="text-zinc-600 text-xs font-mono mt-1">GGSIPU, New Delhi</p>
+        <div class="flex justify-between items-center mt-3 pt-3 border-t border-zinc-800/50">
+          <span class="font-mono text-[11px] text-zinc-700">2021 – 2025</span>
+          <span class="chip">CGPA 7.9</span>
         </div>
       </div>
     </div>
