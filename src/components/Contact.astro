@@ -5,7 +5,7 @@ const links = [
   { label: 'LinkedIn', value: 'linkedin.com/in/spignelon',      href: 'https://www.linkedin.com/in/spignelon' },
   { label: 'Telegram', value: '@spignelon',                     href: 'https://t.me/spignelon' },
   { label: 'Twitter',  value: '@spignelon',                     href: 'https://twitter.com/spignelon' },
-  { label: 'Blog',     value: 'ujjawalsaini.hashnode.dev',       href: 'https://ujjawalsaini.hashnode.dev/' },
+  { label: 'Writing',  value: 'spignelon.github.io/blog',        href: '/blog' },
   { label: 'Discord',  value: 'spignelon',                      href: '#' },
 ];
 ---
@@ -40,8 +40,8 @@ const links = [
       {links.map((l) => (
         <a
           href={l.href}
-          target={l.href.startsWith('mailto') || l.href === '#' ? undefined : '_blank'}
-          rel={l.href.startsWith('mailto') || l.href === '#' ? undefined : 'noopener noreferrer'}
+          target={l.href.startsWith('http') ? '_blank' : undefined}
+          rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
           class="group flex items-center justify-between py-3"
         >
           <span class="font-mono text-[11px] text-zinc-700 uppercase tracking-wider w-20">{l.label}</span>
