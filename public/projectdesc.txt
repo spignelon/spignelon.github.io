@@ -1,0 +1,60 @@
+#Social2Amazon
+Social2Amazon is an AI-powered tool that converts social media content (Instagram, Facebook, TikTok) into complete Amazon product listings by analyzing text, images, videos, and Reels—earning 1st Runner-Up at the Amazon Sambhav Hackathon for this smart social-to-ecommerce solution.
+
+Scrapes & Analyzes Social Content from Instagram, TikTok, and Facebook (incl. Reels & images).
+AI Generates Product Listings with titles, descriptions, and attributes.
+Auto-Publishes to Amazon with dashboard support for account and data management.
+Django
+React.js
+LLMs
+BeautifulSoup
+Selenium
+
+#WaitBin
+WaitBin is a time-locked pastebin service that allows you to create content that remains hidden until a specific date and time. Perfect for surprises, scheduled announcements, or future messages.
+
+Time-locked pastes that unlock at your chosen time with a live countdown
+Shareable and editable links using codes or account access
+Easily manage all WaitBins from a personal dashboard
+Flask
+MongoDB
+Python
+Tailwind CSS
+JavaScript
+
+
+#NoLlama
+NoLlama is a terminal-based chat interface for Google’s Gemini models like 2.0 Flash and 2.5 Pro, offering clean markdown output, multiple model support, and low memory usage. Ollama, Groq, and OpenRouter support coming soon.
+
+Access Gemini Models in Terminal with support for 2.0 Flash, 2.5 Flash Preview, and Pro models
+Smooth Chat Experience with multi-turn context, real-time streaming, and easy model switching
+Lightweight & Intuitive UI featuring colorful markdown, low memory usage, and simple commands like clear or exit
+Python
+Chatbots
+LLMs
+Artificial Intelligence
+Gemini
+
+#FaceMap
+A high-accuracy face recognition photo sharing app with 99.2% accuracy. Developed custom Python modules for image filtering and metadata stripping. Won 2nd prize in HackEDCode hackathon.
+
+Built with Django 4.2, PostgreSQL, deepface, and FaceNet
+Google OAuth integration for secure authentication
+Responsive front-end with Bootstrap, HTML/CSS/JavaScript
+Django
+FaceNet
+PostgreSQL
+Bootstrap
+Google OAuth
+
+#TorBreaker
+A robust cybersecurity platform built during Smart India Hackathon (SIH) 2024, capable of de-anonymizing onion sites operating on the Tor Network. Includes automated URL crawling and AI-driven site legality validation.
+
+15+ custom Python modules for misconfiguration detection
+Django with Celery and Redis for task queue management
+MongoDB database for flexible data storage
+Django
+Celery
+Redis
+MongoDB
+Python
