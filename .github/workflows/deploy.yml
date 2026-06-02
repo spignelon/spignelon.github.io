@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
@@ -15,10 +15,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build-and-deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.pages-deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,6 +36,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -45,5 +50,5 @@ jobs:
           path: "out"
 
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: pages-deployment
         uses: actions/deploy-pages@v4
