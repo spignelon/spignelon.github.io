@@ -1,57 +1,32 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial } from "@react-three/drei";
-// removed unused maath import
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import gsap from "gsap";
-import { Mail, ChevronDown, Terminal, Shield, Code, Cpu, Database, Wrench, Layers } from "lucide-react";
+import { useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import { motion, AnimatePresence, useScroll, useTransform, type Variants } from "framer-motion";
+import { Mail, ChevronDown, Terminal, Shield, Code, Cpu, Database, Wrench, Layers, Menu, X } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter, FaTelegram } from "react-icons/fa";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import * as THREE from "three";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const initialSphere = new Float32Array(800 * 3);
-for (let i = 0; i < 800; i++) {
-  const r = 1.5 * Math.cbrt(Math.random());
-  const theta = Math.random() * 2 * Math.PI;
-  const phi = Math.acos(2 * Math.random() - 1);
-  initialSphere[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-  initialSphere[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-  initialSphere[i * 3 + 2] = r * Math.cos(phi);
-}
+// three.js is heavy — load it in its own chunk after hydration so the page
+// itself becomes interactive fast, then the canvas fades in on top.
+const ParticleBackground = dynamic(() => import("./particle-background"), { ssr: false });
 
-function ParticleBackground(props: { [key: string]: unknown }) {
-  const ref = useRef<THREE.Points>(null);
-  
-  const sphere = initialSphere;
+const NAV_LINKS = ["About", "Experience", "Skills", "Projects", "Achievements", "Contact"];
 
-  useFrame((state, delta) => {
-    if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
-    }
-  });
+const heroContainer: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
+};
 
-  return (
-      <group rotation={[0, 0, Math.PI / 4]}>
-        <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
-          <PointMaterial
-            transparent
-            color="#ffffff"
-            size={0.012}
-            sizeAttenuation={true}
-            depthWrite={false}
-          />
-        </Points>
-      </group>
-  );
-}
+const heroItem: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 const PROJECTS = [
   {
@@ -189,32 +164,19 @@ const HorizontalScrollCarousel = ({ setActiveProject }: { setActiveProject: (pro
 };
 
 export default function Portfolio() {
-  const heroTextRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (heroTextRef.current) {
-      gsap.fromTo(
-        heroTextRef.current.children,
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out", delay: 0.2 }
-      );
-    }
-  }, []);
-
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
   const [activeProject, setActiveProject] = useState<typeof PROJECTS[0] | null>(null);
-  
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-blue-500 selection:text-slate-950 overflow-x-clip">
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <Canvas camera={{ position: [0, 0, 1] }}>
-          <ParticleBackground />
-        </Canvas>
+        <ParticleBackground />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-slate-950/80 to-slate-950 z-10"></div>
       </div>
 
@@ -231,53 +193,90 @@ export default function Portfolio() {
             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(16,185,129,0.8)] group-hover:scale-150 transition-transform duration-300"></span>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-            <a href="#about" className="hover:text-blue-400 transition-colors relative group">About</a>
-            <a href="#experience" className="hover:text-blue-400 transition-colors relative group">Experience</a>
-            <a href="#skills" className="hover:text-blue-400 transition-colors relative group">Skills</a>
-            <a href="#projects" className="hover:text-blue-400 transition-colors relative group">Projects</a>
-            <a href="#achievements" className="hover:text-blue-400 transition-colors relative group">Achievements</a>
-            <a href="#contact" className="hover:text-blue-400 transition-colors relative group">Contact</a>
-            <a 
-              href="/resume.pdf" 
-              target="_blank" 
+            {NAV_LINKS.map((item) => (
+              <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-blue-400 transition-colors relative group">{item}</a>
+            ))}
+            <a
+              href="/resume.pdf"
+              target="_blank"
               className="px-5 py-2 bg-blue-500/10 hover:bg-blue-500 text-blue-400 hover:text-slate-950 border border-blue-500/30 hover:border-blue-500 transition-all duration-300 rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]"
             >
               Resume
             </a>
           </div>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden p-2 -mr-2 text-slate-300 hover:text-blue-400 transition-colors"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden overflow-hidden border-t border-white/5"
+            >
+              <div className="px-6 py-5 flex flex-col gap-4 text-sm font-medium text-slate-300">
+                {NAV_LINKS.map((item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    onClick={() => setMenuOpen(false)}
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    {item}
+                  </a>
+                ))}
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-5 py-2 w-fit bg-blue-500/10 hover:bg-blue-500 text-blue-400 hover:text-slate-950 border border-blue-500/30 hover:border-blue-500 transition-all duration-300 rounded-lg"
+                >
+                  Resume
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.nav>
 
       <main className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Hero Section */}
         <section className="min-h-screen flex flex-col justify-center items-center text-center relative pt-20 pb-24" id="hero">
-          <div ref={heroTextRef} className="max-w-4xl flex flex-col items-center">
-            <h1 className="text-blue-400 font-mono mb-4 text-base md:text-lg">Hi, my name is</h1>
-            <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-2 tracking-tight text-white">
+          <motion.div variants={heroContainer} initial="hidden" animate="visible" className="max-w-4xl flex flex-col items-center">
+            <motion.h1 variants={heroItem} className="text-blue-400 font-mono mb-4 text-base md:text-lg">Hi, my name is</motion.h1>
+            <motion.h2 variants={heroItem} className="text-6xl md:text-7xl lg:text-8xl font-bold mb-2 tracking-tight text-white">
               Ujjawal Saini.
-            </h2>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-300 mb-8 tracking-tight">
+            </motion.h2>
+            <motion.h3 variants={heroItem} className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-300 mb-8 tracking-tight">
               I build things for the web & AI.
-            </h3>
-            <p className="text-slate-300 max-w-2xl text-lg md:text-xl mb-12 leading-relaxed">
+            </motion.h3>
+            <motion.p variants={heroItem} className="text-slate-300 max-w-2xl text-lg md:text-xl mb-12 leading-relaxed">
               A versatile developer and hacker proficient in <span className="text-blue-400">Artificial Intelligence</span>, <span className="text-blue-400">Backend Web Development</span>, <span className="text-blue-400">Machine Learning</span>, <span className="text-blue-400">Deep Learning</span> and <span className="text-blue-400">Cyber Security</span>.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 mb-12">
+            </motion.p>
+            <motion.div variants={heroItem} className="flex flex-wrap justify-center gap-6 mb-12">
               <a href="#projects" className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-mono font-medium rounded transition-colors shadow-[0_0_15px_rgba(59,130,246,0.5)]">
                 See My Work
               </a>
               <a href="#contact" className="px-8 py-3 bg-transparent border border-blue-500 text-blue-500 hover:bg-blue-500/10 font-mono font-medium rounded transition-colors">
                 Get In Touch
               </a>
-            </div>
-            <div className="flex flex-wrap justify-center gap-6 text-slate-300 text-xl">
+            </motion.div>
+            <motion.div variants={heroItem} className="flex flex-wrap justify-center gap-6 text-slate-300 text-xl">
               <a href="https://github.com/spignelon" target="_blank" className="hover:text-[#3b82f6] transition-colors"><FaGithub /></a>
               <a href="https://www.linkedin.com/in/spignelon" target="_blank" className="hover:text-[#3b82f6] transition-colors"><FaLinkedin /></a>
               <a href="https://t.me/spignelon" target="_blank" className="hover:text-[#3b82f6] transition-colors"><FaTelegram /></a>
               <a href="mailto:ujjawalsaini47@gmail.com" className="hover:text-[#3b82f6] transition-colors"><Mail size={20} /></a>
               <a href="https://twitter.com/spignelon" target="_blank" className="hover:text-[#3b82f6] transition-colors"><FaTwitter /></a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           <a href="#about" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-blue-400 hover:text-blue-300 font-mono text-sm animate-bounce cursor-pointer transition-colors z-20">
             Scroll Down
             <ChevronDown size={20} />
@@ -286,7 +285,7 @@ export default function Portfolio() {
         
         <section id="about" className="py-32 relative">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="mb-16 flex items-center gap-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">01. <span className="text-blue-400 font-mono text-2xl md:text-3xl">About Me</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight"><span className="text-blue-500 font-mono text-2xl md:text-3xl">01.</span> About Me</h2>
             <span className="h-[1px] bg-slate-800 flex-grow max-w-sm"></span>
           </motion.div>
 
@@ -582,7 +581,7 @@ export default function Portfolio() {
 
         <section id="projects" className="py-32 relative border-t border-white/5">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="mb-20 flex items-center gap-6">
-             <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">04. <span className="text-blue-400 font-mono text-2xl md:text-3xl">Things I&apos;ve Built</span></h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight"><span className="text-blue-500 font-mono text-2xl md:text-3xl">04.</span> Things I&apos;ve Built</h2>
              <span className="h-[1px] bg-slate-800 flex-grow max-w-sm"></span>
           </motion.div>
 
@@ -673,29 +672,35 @@ export default function Portfolio() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  title: "ML-Powered Text Analyzer",
-                  description: "A machine learning tool that analyzes text sentiment, extracts key information, and categorizes content using NLP techniques.",
-                  tags: "Python NLP TensorFlow Flask",
-                  icon: "📊"
+                  title: "ShareDir",
+                  description: "A Python tool to share files and directories over LAN or the internet with a single command — production-ready HTTP server with passphrase protection, QR code access, file uploads, and a modern web interface.",
+                  tags: "Python Waitress HTTP Networking",
+                  icon: "📂",
+                  link: "https://github.com/spignelon/ShareDir"
                 },
                 {
-                  title: "Secure API Gateway",
-                  description: "A security-focused API gateway that provides authentication, rate limiting, and intrusion detection for microservices.",
-                  tags: "Golang JWT Redis Docker",
-                  icon: "⚙️"
+                  title: "Veiled",
+                  description: "A secure, file-less password manager that derives unique passwords from your master password using SHA512, scrypt, and BLAKE2b — nothing is ever stored, so there's no database to breach.",
+                  tags: "Python Cryptography Scrypt Security",
+                  icon: "🔐",
+                  link: "https://github.com/spignelon/veiled"
                 },
                 {
-                  title: "Linux System Monitor",
-                  description: "A lightweight but powerful system monitoring tool for Linux servers with alerting capabilities and historical data analysis.",
-                  tags: "Python Bash SQLite Chart.js",
-                  icon: "📅"
+                  title: "GoQR",
+                  description: "A fast, privacy-first QR code generator built with React and TypeScript. QR codes generate instantly as you type, entirely in your browser — no data ever leaves your device.",
+                  tags: "TypeScript React Privacy",
+                  icon: "🔳",
+                  link: "https://github.com/spignelon/qr"
                 }
               ].map((project, i) => (
-                <motion.div 
+                <motion.a
                   key={i}
-                  initial={{ opacity: 0, y: 20 }} 
-                  whileInView={{ opacity: 1, y: 0 }} 
-                  viewport={{ once: true }} 
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="bg-slate-900 border border-slate-800 p-8 rounded-xl hover:-translate-y-2 transition-transform duration-300 group flex flex-col h-full"
                 >
@@ -711,7 +716,7 @@ export default function Portfolio() {
                   <div className="text-slate-300 font-mono text-xs tracking-wide space-x-3">
                     {project.tags}
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
 
@@ -826,7 +831,7 @@ export default function Portfolio() {
           <div className="max-w-4xl mx-auto px-4 relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="mb-12 flex items-center justify-start gap-6">
               <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight flex items-center gap-4">
-                  <span className="text-emerald-400 font-mono text-2xl md:text-3xl">06.</span> Get In Touch
+                  <span className="text-blue-500 font-mono text-2xl md:text-3xl">06.</span> Get In Touch
               </h2>
               <span className="h-[1px] bg-slate-800 flex-grow max-w-[200px]"></span>
             </motion.div>
@@ -835,7 +840,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               className="text-slate-400 text-center text-lg leading-relaxed mb-16 mx-auto max-w-2xl"
             >
-              I'm always open to interesting conversations, collaborations, and side projects. Whether you have a question, a project idea, or just want to say hello &mdash; feel free to reach out!
+              I&apos;m always open to interesting conversations, collaborations, and side projects. Whether you have a question, a project idea, or just want to say hello &mdash; feel free to reach out!
             </motion.p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
