@@ -227,7 +227,18 @@ export default function Portfolio() {
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={(e) => {
+                      // The menu-collapse layout change cancels the browser's
+                      // in-flight smooth scroll on mobile, so close the menu
+                      // first and start the scroll after the animation ends.
+                      e.preventDefault();
+                      const id = item.toLowerCase();
+                      setMenuOpen(false);
+                      window.setTimeout(() => {
+                        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                        window.history.replaceState(null, "", `#${id}`);
+                      }, 350);
+                    }}
                     className="hover:text-blue-400 transition-colors"
                   >
                     {item}
@@ -249,7 +260,7 @@ export default function Portfolio() {
 
       <main className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Hero Section */}
-        <section className="min-h-screen flex flex-col justify-center items-center text-center relative pt-20 pb-24" id="hero">
+        <section className="min-h-screen flex flex-col justify-center items-center text-center relative pt-32 md:pt-20 pb-24" id="hero">
           <motion.div variants={heroContainer} initial="hidden" animate="visible" className="max-w-4xl flex flex-col items-center">
             <motion.h1 variants={heroItem} className="text-blue-400 font-mono mb-4 text-base md:text-lg">Hi, my name is</motion.h1>
             <motion.h2 variants={heroItem} className="text-6xl md:text-7xl lg:text-8xl font-bold mb-2 tracking-tight text-white">
