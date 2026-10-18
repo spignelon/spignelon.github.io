@@ -28,7 +28,78 @@ const heroItem: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const PROJECTS = [
+interface Project {
+  title: string;
+  description: string;
+  descriptionFull: string;
+  points?: string[];
+  image?: string;
+  imageFit?: "cover" | "contain";
+  status?: string;
+  tags: string[];
+  github?: string;
+  link?: string;
+  linkLabel?: string;
+}
+
+const PROJECTS: Project[] = [
+  {
+    title: "NearBy",
+    description: "A location-aware anonymous chat platform that connects you with people physically close to you.",
+    descriptionFull: "NearBy is a location-aware, anonymous chat platform that connects people with others who are physically close to them or share the same interests. Sign in with Google or Facebook, set your location, pick a matching mode and start talking without revealing who you are unless you choose to.",
+    points: [
+      "Three matching modes: Closest First, City / State, and Random",
+      "Real-time chat over WebSockets with a Go backend and PostgreSQL",
+      "Anonymous by default: no name or photo shown until you reveal yourself",
+      "Location from GPS, address or city name via OpenStreetMap's Nominatim"
+    ],
+    image: "/nearby.png",
+    tags: ["Next.js", "TypeScript", "Go", "PostgreSQL", "WebSockets"],
+    link: "https://nearby.ujjawalsaini.com"
+  },
+  {
+    title: "Netra",
+    description: "A self-hosted IP, device and location intelligence toolkit for authorized security assessments.",
+    descriptionFull: "Netra is a self-hosted IP address, device and location intelligence toolkit for authorized security assessments: OSINT gathering, phishing-simulation exercises and physical or remote audits. It runs as a single admin account in one Docker container with SQLite storage, and the image is only ~23 MB with ~24 MB of idle RAM.",
+    points: [
+      "Four capture link types: redirect, tracking pixel, GPS decoy page and live-proxied preview link",
+      "Logs IP, geolocation, ISP/ASN, device, OS and browser, with precise coordinates for GPS events",
+      "Live-proxy clone engine using a Service Worker, so cloned pages keep working under your domain",
+      "Link expiry, QR codes, CSV export and ntfy/Gotify webhook alerts, written in Go with no web framework"
+    ],
+    image: "/netra.png",
+    imageFit: "contain",
+    tags: ["Go", "SQLite", "Docker", "OSINT", "Security"],
+    github: "https://github.com/spignelon/netra"
+  },
+  {
+    title: "FinEase",
+    description: "A paper trading platform for NIFTY index options with live market prices from Angel One SmartAPI.",
+    descriptionFull: "FinEase is a paper trading platform for NIFTY index options (NSE F&O) built on the Angel One SmartAPI with live market prices. Practise buying, selling and short selling options with ₹10 lakh of virtual cash and no real money at risk. It was built in June 2025 as a learning project to explore real-time market data pipelines and options trading mechanics.",
+    points: [
+      "Live option prices streamed from Angel One's WebSocket feed into MongoDB",
+      "NIFTY option chain for the 3 nearest expiries, with search by symbol or strike",
+      "Realistic mechanics: lot sizes, flat trading fees and a fixed margin for short selling",
+      "Dashboard, portfolio with live P&L, and full trade history"
+    ],
+    image: "/finease.png",
+    tags: ["Flask", "MongoDB", "React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/spignelon/FinEase"
+  },
+  {
+    title: "Resume Analyzer & Job Search",
+    description: "AI-powered resume scoring against a job description, with improvement tips and live job search.",
+    descriptionFull: "A full-stack web app that scores your resume against a job description using Google Gemini, tells you how to improve it with course recommendations, and lets you search live job listings from multiple job boards.",
+    points: [
+      "Upload a PDF resume and a job description to get a 0–100 match score with strengths and gaps",
+      "4–5 actionable suggestions, each with recommended online courses",
+      "Job search across Indeed and LinkedIn by title and location",
+      "Responsive layout that works on mobile"
+    ],
+    image: "/jobportal.png",
+    tags: ["Flask", "React", "TypeScript", "Gemini", "Tailwind CSS"],
+    github: "https://github.com/spignelon/jobportal"
+  },
   {
     title: "Social2Amazon",
     description: "AI-powered tool that converts social media content into complete Amazon product listings.",
@@ -54,8 +125,8 @@ const PROJECTS = [
     ],
     image: "/waitbin.png",
     tags: ["Flask", "MongoDB", "Python", "Tailwind CSS", "JavaScript"],
-    github: "#",
-    link: "#"
+    github: "https://github.com/spignelon/WaitBin",
+    link: "https://waitbin.vercel.app"
   },
   {
     title: "NoLlama",
@@ -68,8 +139,9 @@ const PROJECTS = [
     ],
     image: "/nollama.png",
     tags: ["Python", "Chatbots", "LLMs", "AI", "Gemini"],
-    github: "#",
-    link: "#"
+    github: "https://github.com/spignelon/nollama",
+    link: "https://pypi.org/project/nollama/",
+    linkLabel: "PyPI"
   },
   {
     title: "Facemap",
@@ -98,19 +170,61 @@ const PROJECTS = [
     tags: ["Django", "Celery", "Redis", "MongoDB", "Python"],
     github: "#",
     link: "#"
+  },
+  {
+    title: "Shabd",
+    description: "A command-line English dictionary for quick word lookups that works offline.",
+    descriptionFull: "Shabd is a command-line English dictionary tool for quick word lookups, published on PyPI. It uses the Open English WordNet as its data source, so after a one-time download every lookup is served locally and works offline. It started as a Cambridge Dictionary scraper and moved to WordNet after Cambridge added bot protection.",
+    points: [
+      "Look up single words or whole phrases straight from the terminal with `shabd apple`",
+      "Resolves inflected forms automatically, so hike, hiking and hiked all land on the same entry",
+      "Fully offline after first use, with a background check for newer dictionary data at most every 30 days",
+      "Installable with a single `pip install shabd`"
+    ],
+    image: "/shabd.png",
+    tags: ["Python", "CLI", "WordNet", "PyPI"],
+    github: "https://github.com/spignelon/shabd",
+    link: "https://pypi.org/project/shabd/",
+    linkLabel: "PyPI"
+  },
+  {
+    title: "Highway Havoc",
+    description: "A portrait-orientation Android car-combat endless runner: swipe between lanes, shoot the traffic, survive.",
+    descriptionFull: "Highway Havoc is a portrait-orientation Android car-combat endless runner built with Godot. You drive a three-lane highway that keeps getting faster, swiping to change lane and tapping to shoot the traffic ahead. Destroyed vehicles drop coins that buy weapon and car upgrades, skins, and feed daily missions. Currently in alpha.",
+    points: [
+      "Four weapons, five cars with distinct handling, five paints, and four difficulty tiers",
+      "Two looks (Sunny Cartoon and Neon Nights) with a full day/night cycle",
+      "Tuned for mid-range phones: automatic quality tiers and resolution scaling, 60 fps on a real device",
+      "Single-player and fully offline; APKs published through a public releases repo"
+    ],
+    image: "/highwayhavoc.png",
+    status: "Alpha",
+    tags: ["Godot", "GDScript", "Android", "Game Dev"],
+    link: "https://havoc.ujjawalsaini.com"
   }
 ];
 
-const HorizontalScrollCarousel = ({ setActiveProject }: { setActiveProject: (project: typeof PROJECTS[0] | null) => void }) => {
-  const targetRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: targetRef });
+// Placeholder "#" links on older entries aren't real destinations
+const isRealLink = (href?: string): href is string => !!href && href !== "#";
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-65%"]);
+const HorizontalScrollCarousel = ({ setActiveProject }: { setActiveProject: (project: Project | null) => void }) => {
+  const targetRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  // Progress runs 0 -> 1 only while the section is pinned, so the last card lands fully in view
+  const { scrollYProgress } = useScroll({ target: targetRef, offset: ["start start", "end end"] });
+
+  const x = useTransform(scrollYProgress, (p) => {
+    const track = trackRef.current;
+    if (!track) return 0;
+    // The sticky wrapper clips the track, so measure against it rather than the window
+    const visible = track.parentElement?.clientWidth ?? document.documentElement.clientWidth;
+    return -p * Math.max(0, track.scrollWidth - visible);
+  });
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-transparent">
+    <section ref={targetRef} style={{ height: `${PROJECTS.length * 60}vh` }} className="relative bg-transparent">
       <div className="sticky top-0 flex h-[100vh] pt-24 pb-8 items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-12 px-4 md:px-12 w-max items-center h-full max-h-[700px]">
+        <motion.div ref={trackRef} style={{ x }} className="flex gap-12 px-4 md:px-12 w-max items-center h-full max-h-[700px]">
           {PROJECTS.map((project, i) => (
             <div 
               key={i}
@@ -127,7 +241,7 @@ const HorizontalScrollCarousel = ({ setActiveProject }: { setActiveProject: (pro
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="object-cover w-full h-full opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 ease-out"
+                      className={`${project.imageFit === "contain" ? "object-contain" : "object-cover"} w-full h-full opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 ease-out`}
                     />
                   ) : (
                     <div className="text-3xl text-slate-800 font-bold blur-[1px]">{project.title}</div>
@@ -138,7 +252,12 @@ const HorizontalScrollCarousel = ({ setActiveProject }: { setActiveProject: (pro
                 {/* Bottom Side: Content */}
                 <div className="p-8 md:p-10 flex flex-col justify-center flex-1">
                   <span className="text-blue-400 font-mono text-xs uppercase tracking-widest mb-3 block">
-                    Project 0{i + 1}
+                    Project {String(i + 1).padStart(2, "0")}
+                    {project.status && (
+                      <span className="ml-3 px-2 py-0.5 rounded bg-amber-400/10 text-amber-400 border border-amber-400/20 normal-case tracking-normal">
+                        {project.status}
+                      </span>
+                    )}
                   </span>
                   <h3 className="text-3xl md:text-3xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
                     {project.title}
@@ -169,7 +288,7 @@ export default function Portfolio() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
-  const [activeProject, setActiveProject] = useState<typeof PROJECTS[0] | null>(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
 
@@ -659,6 +778,21 @@ export default function Portfolio() {
                       )}
                     </div>
 
+                    {(isRealLink(activeProject.github) || isRealLink(activeProject.link)) && (
+                      <div className="flex flex-wrap gap-3 mt-8">
+                        {isRealLink(activeProject.link) && (
+                          <a href={activeProject.link} target="_blank" rel="noreferrer" className="px-5 py-2.5 bg-blue-500 hover:bg-blue-600 text-white font-mono text-sm rounded transition-colors">
+                            {activeProject.linkLabel ?? "Live Site"} ↗
+                          </a>
+                        )}
+                        {isRealLink(activeProject.github) && (
+                          <a href={activeProject.github} target="_blank" rel="noreferrer" className="px-5 py-2.5 border border-slate-700 hover:bg-slate-800 text-slate-200 font-mono text-sm rounded transition-colors">
+                            GitHub ↗
+                          </a>
+                        )}
+                      </div>
+                    )}
+
                     <div className="flex flex-wrap items-center gap-4 mt-8 pt-6 border-t border-[#1e293b]">
                       {activeProject.tags.map((tag: string, i: number) => (
                         <span key={i} className="text-blue-400 font-mono text-[13px] hover:underline cursor-default">
@@ -683,32 +817,34 @@ export default function Portfolio() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  title: "ShareDir",
-                  description: "A Python tool to share files and directories over LAN or the internet with a single command — production-ready HTTP server with passphrase protection, QR code access, file uploads, and a modern web interface.",
-                  tags: "Python Waitress HTTP Networking",
-                  icon: "📂",
-                  link: "https://github.com/spignelon/ShareDir"
+                  title: "Trade Executor",
+                  description: "A staged algorithmic-trading stack: a simulated NIFTY options feed, order management, risk controls, a live monitoring dashboard and an offline strategy backtester.",
+                  tags: "Python Flask Redis MongoDB WebSockets",
+                  icon: "📈",
+                  github: "https://github.com/spignelon/trade_executor"
                 },
                 {
-                  title: "Veiled",
-                  description: "A secure, file-less password manager that derives unique passwords from your master password using SHA512, scrypt, and BLAKE2b — nothing is ever stored, so there's no database to breach.",
-                  tags: "Python Cryptography Scrypt Security",
-                  icon: "🔐",
-                  link: "https://github.com/spignelon/veiled"
+                  title: "ShareDir",
+                  description: "Share files and folders over LAN or the internet with one command, with passphrase protection, QR code access, optional uploads and a modern web UI.",
+                  tags: "Python Waitress CLI PyPI",
+                  icon: "📂",
+                  github: "https://github.com/spignelon/ShareDir",
+                  link: "https://pypi.org/project/sharedir/",
+                  linkLabel: "PyPI"
                 },
                 {
                   title: "GoQR",
-                  description: "A fast, privacy-first QR code generator built with React and TypeScript. QR codes generate instantly as you type, entirely in your browser — no data ever leaves your device.",
-                  tags: "TypeScript React Privacy",
+                  description: "A fast, privacy-first QR code generator. Codes appear as you type, everything runs locally in your browser, and you can export as PNG or copy to the clipboard.",
+                  tags: "React TypeScript Vite Tailwind",
                   icon: "🔳",
-                  link: "https://github.com/spignelon/qr"
+                  iconSrc: "/goqr-icon.svg",
+                  github: "https://github.com/spignelon/qr",
+                  link: "https://spignelon.github.io/qr/",
+                  linkLabel: "Live"
                 }
               ].map((project, i) => (
-                <motion.a
+                <motion.div
                   key={i}
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -716,9 +852,14 @@ export default function Portfolio() {
                   className="bg-slate-900 border border-slate-800 p-8 rounded-xl hover:-translate-y-2 transition-transform duration-300 group flex flex-col h-full"
                 >
                   <div className="flex items-center mb-6">
-                    <div className="w-10 h-10 flex items-center justify-center text-emerald-400 text-2xl bg-emerald-400/10 rounded-sm">
-                      {project.icon}
-                    </div>
+                    {"iconSrc" in project && project.iconSrc ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img src={project.iconSrc} alt="" className="w-10 h-10 rounded-lg" />
+                    ) : (
+                      <div className="w-10 h-10 flex items-center justify-center text-emerald-400 text-2xl bg-emerald-400/10 rounded-sm">
+                        {project.icon}
+                      </div>
+                    )}
                   </div>
                   <h4 className="text-xl font-bold text-slate-200 mb-4 group-hover:text-emerald-400 transition-colors">{project.title}</h4>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
@@ -727,7 +868,13 @@ export default function Portfolio() {
                   <div className="text-slate-300 font-mono text-xs tracking-wide space-x-3">
                     {project.tags}
                   </div>
-                </motion.a>
+                  <div className="mt-6 pt-5 border-t border-slate-800 flex gap-5 font-mono text-sm">
+                    <a href={project.github} target="_blank" rel="noreferrer" className="text-emerald-400 hover:underline">GitHub ↗</a>
+                    {project.link && (
+                      <a href={project.link} target="_blank" rel="noreferrer" className="text-emerald-400 hover:underline">{project.linkLabel ?? "Live"} ↗</a>
+                    )}
+                  </div>
+                </motion.div>
               ))}
             </div>
 
