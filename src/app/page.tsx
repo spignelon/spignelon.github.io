@@ -73,6 +73,21 @@ const PROJECTS: Project[] = [
     github: "https://github.com/spignelon/netra"
   },
   {
+    title: "Social2Amazon",
+    description: "AI-powered tool that converts social media content into complete Amazon product listings.",
+    descriptionFull: "Social2Amazon is an AI-powered tool that converts social media content (Instagram, Facebook, TikTok) into complete Amazon product listings by analyzing text, images, videos, and Reels—earning 1st Runner-Up at the Amazon Sambhav Hackathon for this smart social-to-ecommerce solution.",
+    points: [
+      "Scrapes & Analyzes Social Content from Instagram, TikTok, and Facebook (incl. Reels & images).",
+      "AI Generates Product Listings with titles, descriptions, and attributes.",
+      "Auto-Publishes to Amazon with dashboard support for account and data management."
+    ],
+    image: "/social2amazon.png",
+    tags: ["Django", "React.js", "LLMs", "BeautifulSoup", "Selenium"],
+    github: "#",
+    link: "https://www.aboutamazon.in/news/small-business/smbhav-hackathon-2024-ai-innovation-small-businesses",
+    linkLabel: "Amazon News"
+  },
+  {
     title: "FinEase",
     description: "A paper trading platform for NIFTY index options with live market prices from Angel One SmartAPI.",
     descriptionFull: "FinEase is a paper trading platform for NIFTY index options (NSE F&O) built on the Angel One SmartAPI with live market prices. Practise buying, selling and short selling options with ₹10 lakh of virtual cash and no real money at risk. It was built in June 2025 as a learning project to explore real-time market data pipelines and options trading mechanics.",
@@ -99,20 +114,6 @@ const PROJECTS: Project[] = [
     image: "/jobportal.png",
     tags: ["Flask", "React", "TypeScript", "Gemini", "Tailwind CSS"],
     github: "https://github.com/spignelon/jobportal"
-  },
-  {
-    title: "Social2Amazon",
-    description: "AI-powered tool that converts social media content into complete Amazon product listings.",
-    descriptionFull: "Social2Amazon is an AI-powered tool that converts social media content (Instagram, Facebook, TikTok) into complete Amazon product listings by analyzing text, images, videos, and Reels—earning 1st Runner-Up at the Amazon Sambhav Hackathon for this smart social-to-ecommerce solution.",
-    points: [
-      "Scrapes & Analyzes Social Content from Instagram, TikTok, and Facebook (incl. Reels & images).",
-      "AI Generates Product Listings with titles, descriptions, and attributes.",
-      "Auto-Publishes to Amazon with dashboard support for account and data management."
-    ],
-    image: "/social2amazon.png",
-    tags: ["Django", "React.js", "LLMs", "BeautifulSoup", "Selenium"],
-    github: "#",
-    link: "#"
   },
   {
     title: "WaitBin",
